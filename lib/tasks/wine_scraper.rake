@@ -4,8 +4,10 @@ task :wine_scraper => :environment do
   require "open-uri"
 
   # url array
-  urls = ["https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=0&metaData=&pageSize=4500&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet=",
-          "https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=4500&metaData=&pageSize=4500&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet="]
+  puts "The scraper will search twice. Please enter query size."
+  query_size = gets.chomp
+  urls = ["https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=0&metaData=&pageSize=#{query_size}&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet=",
+          "https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=#{query_size}&metaData=&pageSize=#{query_size}&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet="]
 
   urls.each do |url|
 
