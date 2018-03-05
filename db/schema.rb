@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305172045) do
+ActiveRecord::Schema.define(version: 20180305172737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stocks", force: :cascade do |t|
+    t.bigint "store_id"
+    t.bigint "wine_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_stocks_on_store_id"
+    t.index ["wine_id"], name: "index_stocks_on_wine_id"
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.integer "saq_store_id"
+    t.string "banner"
+    t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +54,21 @@ ActiveRecord::Schema.define(version: 20180305172045) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wines", force: :cascade do |t|
+    t.string "name"
+    t.string "variety"
+    t.string "colour"
+    t.integer "year"
+    t.float "rating"
+    t.float "price"
+    t.string "photo_url"
+    t.boolean "pairs_with_meat"
+    t.boolean "pairs_with_seafood"
+    t.boolean "pairs_with_cheese"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "stocks", "stores"
+  add_foreign_key "stocks", "wines"
 end
