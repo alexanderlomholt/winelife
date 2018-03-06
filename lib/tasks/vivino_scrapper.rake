@@ -27,8 +27,7 @@ end
 task :vivino_scrapper => :environment do 
 
 	Wine.all.each do |wine|
-		wine_name = "Ninquen+2014"
-		url = "https://www.vivino.com/search/wines?q=#{wine_name}"
+		url = "https://www.vivino.com/search/wines?q=#{wine.name}"
 
 		html_file = open(url).read
 		html_doc = Nokogiri::HTML(html_file)
@@ -50,7 +49,7 @@ task :vivino_scrapper => :environment do
 			pairs = get_food_pairs(pairs_html)
 
 			# refacto; put in methods (if time)
-			wine.update(rating: rating, reviews_number: reviews_number, pairs_with_meat: pairs[:with_meat] )
+			wine.update(rating: rating, reviews_number: reviews_number, pairs_with_meat: pairs[:with_meat], pairs_with_seafood: pairs[:with_fish], pairs_with_cheese: pairs[:with_cheese] )
 
 		rescue NotMethodError => e
 			puts "Error #{e}"
