@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+
+.jumbotron {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("winecorks.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  .jumbotron h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+  }
+
+  .btn {
+    padding: 15px 50px;
+  }
+}
+
+.banne-content{
+  background-color: wheat;
+  padding-bottom: 430px;
+  padding-left: 230px;
+  padding-right: 230px;
+}
+
+.col-sm-5{
+  background-color:white;
+}
+
+
+
