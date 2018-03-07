@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   post "/", to: 'wines#search'
   get "/results", to: 'wines#results'
-  get "/wine/:id", to: 'wines#show'
+  get "/wine/:id", to: 'wines#show', as: 'show'
 end

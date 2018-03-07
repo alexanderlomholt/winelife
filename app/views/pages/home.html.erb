@@ -1,150 +1,129 @@
-  <div class="jumbotron">
-    <div class="container">
-      <div class="row">
-        <!-- Header Left -->
-        <div class="col-sm-7">
-          <div class="verticle-line">
-          </div>
+<div class="container main-content">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="form-title">Wine search</h2>
+    <form action="/" method="POST">
+      <table>
+        <tr>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="red">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "001-wine.png", height: 40 %>
+                  <p>Red</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="white">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "001-wine.png", height: 40 %>
+                  <p>White</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="rose">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "001-wine.png", height: 40 %>
+                  <p>Rosé</p>
+                </div>
+              </span>
+            </label>
+          </td>
+        </tr>
 
-        </div>
-        <!-- /End Header Left -->
-        <!-- Header Form -->
-        <div class="col-sm-5" id="pick-form">
-          <!-- Form Title -->
-            <h2 class="form-title">Wine search
-          <span class="fa fa-caret-down"></span>
-              </h2>
-          <!--- /End Form Title -->
-    <div class="form-bg">
-          <div id="pick-results"></div>
-          <!-- Form -->
-          <form action="/" method="POST">
-          <table>
-            <tr>
-                <td>
-                  <label class="cb-container">
-                    <input type="checkbox" value="selected" name="red">
-                    <span class="checkmark">
-                      <div class="checkmark-content">
-                        <%= image_tag "001-wine.png", height: 40 %>
-                        <p>Red</p>
-                      </div>
-                    </span>
-                  </label>
-                </td>
-                <td>
-                  <label class="cb-container">
-                    <input type="checkbox" value="selected" name="white">
-                    <span class="checkmark">
-                      <div class="checkmark-content">
-                        <%= image_tag "001-wine.png", height: 40 %>
-                        <p>White</p>
-                      </div>
-                    </span>
-                  </label>
-                </td>
-                <td>
-                  <label class="cb-container">
-                    <input type="checkbox" value="selected" name="rose">
-                    <span class="checkmark">
-                      <div class="checkmark-content">
-                        <%= image_tag "001-wine.png", height: 40 %>
-                        <p>Rosé</p>
-                      </div>
-                    </span>
-                  </label>
-                </td>
-            </tr>
+        <tr>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="meat">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "006-steak.png", height: 40 %>
+                  <p>Meat & poultry</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="fish">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "023-fish.png", height: 40 %>
+                  <p>Fish & seafood</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="cheese">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "028-cheese.png", height: 40 %>
+                  <p>Cheese</p>
+                </div>
+              </span>
+            </label>
+          </td>
+        </tr>
 
-            <tr>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="meat">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <%= image_tag "006-steak.png", height: 40 %>
-                      <p>Meat & poultry</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="fish">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <%= image_tag "023-fish.png", height: 40 %>
-                      <p>Fish & seafood</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="cheese">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <%= image_tag "028-cheese.png", height: 40 %>
-                      <p>Cheese</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-            </tr>
+        <tr>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="budget_1">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <i class="fa fa-dollar"></i>
+                  <p><15</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="budget_2">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <div>
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                  </div>
+                  <p>15-25</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="budget_3">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <div>
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                    <i class="fa fa-dollar"></i>
+                  </div>
+                  <p>25+</p>
+                </div>
+              </span>
+            </label>
+          </td>
+        </tr>
+      </table>
 
-            <tr>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="budget_1">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <i class="fa fa-dollar"></i>
-                      <p><15</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="budget_2">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <div>
-                        <i class="fa fa-dollar"></i>
-                        <i class="fa fa-dollar"></i>
-                      </div>
-                      <p>15-25</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-              <td>
-                <label class="cb-container">
-                  <input type="checkbox" value="selected" name="budget_3">
-                  <span class="checkmark">
-                    <div class="checkmark-content">
-                      <div>
-                        <i class="fa fa-dollar"></i>
-                        <i class="fa fa-dollar"></i>
-                        <i class="fa fa-dollar"></i>
-                      </div>
-                      <p>25+</p>
-                    </div>
-                  </span>
-                </label>
-              </td>
-            </tr>
-          </table>
+      <button type="submit" class="submit-btn" id="submit_btn">Submit</button>
+    </form>
+    <p>Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a> from <a href="https://www.flaticon.com">flaticon.com</a></p>
 
-
-          <button type="submit" class="submit-btn" id="submit_btn">Submit</button>
-  </form>
-  <p>Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a> from <a href="https://www.flaticon.com">flaticon.com</a> </p>
-          <!-- /End Form -->
-        </div>
-
-        <!-- /End Header Form -->
-      </div>
-    </div>
+  </div>
+</div>
 
 
