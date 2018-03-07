@@ -22,12 +22,16 @@ h1 {
   font-color: #3A3A3A;
   h2 {
     margin-top: 5px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
   }
   p {
     font-size: 14px;  
   }
+}
+
+h3 {
+  font-size: 14px;
 }
 
 
@@ -36,10 +40,14 @@ h1 {
   top: 20px;
 }
 
+.card-picture {
+  text-align: center
+}
+
 .product-image{
+  text-align: center;
   border-radius: 3px;
-  width: 80%;
-  height: 280px;
+  max-height: 250px;
   margin: 0 auto;
   background-size: cover;
 
@@ -53,6 +61,7 @@ h1 {
   text-align: center;
   font-size: 16px;
   top: 350px;
+  max-width: 340px;
 
 }
 
@@ -61,7 +70,7 @@ h1 {
   color: #484848;
   bottom: 75px;
   right: 80px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
 }
 // .card-link {
@@ -103,10 +112,10 @@ a:hover {
   padding: 10px 10px;
   background-color: #970736;
   color: white;
-  width: 60%;
+  width: 340px;
   bottom: 30px; 
   position: absolute;
-  left: 80px;
+  text-align: center;
 }
 
 .fa-star {
