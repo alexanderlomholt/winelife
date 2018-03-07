@@ -1,7 +1,14 @@
+#wrapper {
+  background-color: #F4F4F4;
+}
+
 .container {
   display:flex;
 }
 
+h1 {
+  color: #970736;
+}
 .white-box {
   background-color: white;
   padding: 30px;
@@ -10,7 +17,7 @@
   height: 525px;
   width: 400px;
   // border: solid 1px #970736;
-  border-radius: 3px;
+  border-radius: 4px;
   font-family: Montserrat;
   font-color: #3A3A3A;
   h2 {
@@ -89,7 +96,6 @@
 a:hover {
   color: white;
   text-decoration: none;
-  background-color: rgba(149, 13, 56, 0.8)
 }
 
 
@@ -97,10 +103,10 @@ a:hover {
   padding: 10px 10px;
   background-color: #970736;
   color: white;
-  width: 50%;
+  width: 60%;
   bottom: 30px; 
   position: absolute;
-  left: 100px;
+  left: 80px;
 }
 
 .fa-star {
