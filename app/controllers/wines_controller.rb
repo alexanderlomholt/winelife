@@ -83,7 +83,7 @@ class WinesController < ApplicationController
     @wines.each { |elt| p elt }
 
 
-    # render :results
+    render :results
   end
 
   def results
