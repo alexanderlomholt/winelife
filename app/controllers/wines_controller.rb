@@ -63,7 +63,7 @@ class WinesController < ApplicationController
     # delete unavailable wines at array
     @wines.each_with_index do |elt, i|
       # ==== CHECK FOR WINE AVAILABILITY AT SPECIFIC SAQ OUTLET ====
-      store_id = 23015
+      store_id = Store.near(location.coordinates, 5).first.store_identifier
       product_id = elt.saq_code
       url = "https://www.saq.com/webapp/wcs/stores/servlet/SAQAjaxInventoryInStoreView?catalogId=50000&langId=-1&storeId=20002&productId=#{product_id}&storeInventoryId=#{store_id}"
 
@@ -78,17 +78,28 @@ class WinesController < ApplicationController
         @wines.delete_at(i)
       end
       # =============================================================
+      p Store.where(store_identifier: store_id)
     end
 
     @wines.each { |elt| p elt }
 
 
-    # render :results
+    render :results
   end
 
   def results
   end
 
   def show
+  end
+
+  private
+
+  def location
+    @location ||= if Rails.env.test? || Rails.env.development?
+      Geocoder.search("Montreal").first
+    else
+      request.location
+    end
   end
 end
