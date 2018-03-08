@@ -29,7 +29,13 @@ task :vivino_scraper => :environment do
   puts "Please enter interval between each request (in seconds)"
   interval = STDIN.gets.chomp.to_f
 
-	Wine.all.each do |wine|
+  puts "Please enter begin index"
+  begin_index = STDIN.gets.chomp.to_i
+
+  puts "Please enter endind index"
+  end_index = STDIN.gets.chomp.to_i
+
+	Wine.all[begin_index..end_index].each do |wine|
     p wine_name_normalized = wine.name.gsub(/\s+/, "%20").unicode_normalize(:nfkd).encode('ASCII', replace: '')
 		url = "https://www.vivino.com/search/wines?q=#{wine_name_normalized}"
 

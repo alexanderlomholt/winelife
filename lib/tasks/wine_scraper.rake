@@ -2,15 +2,13 @@ task :wine_scraper => :environment do
   require "nokogiri"
   require "open-uri"
 
-  # url array
-  puts "The scraper will search twice. Please enter query size."
-  query_size = STDIN.gets.chomp
+  puts "Please enter begin index"
+  begin_index = STDIN.gets.chomp
 
-  puts "Please enter interval between each request (in seconds)"
-  interval = STDIN.gets.chomp.to_f
+  puts "Please enter page size"
+  page_size = STDIN.gets.chomp
 
-  urls = ["https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=0&metaData=&pageSize=#{query_size}&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet=",
-          "https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=#{query_size}&metaData=&pageSize=#{query_size}&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet="]
+  urls = ["https://www.saq.com/webapp/wcs/stores/servlet/AjaxProduitSearchResultView?facetSelectionCommandName=SearchDisplay&searchType=&originalSearchTerm=*&orderBy=1&categoryIdentifier=06&showOnly=product&langId=-1&beginIndex=#{begin_index}&metaData=&pageSize=#{page_size}&catalogId=50000&searchTerm=*&pageView=grid&facet=&categoryId=39919&storeId=20002&orderByType=2&filterFacet="]
 
   urls.each do |url|
 
@@ -64,7 +62,6 @@ task :wine_scraper => :environment do
 
           wine.save!
           puts "--------------------"
-          sleep interval;
         end
       end
 

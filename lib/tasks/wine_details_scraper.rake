@@ -5,7 +5,9 @@ task :wine_details_scraper => :environment do
   puts "Please enter interval between each request (in seconds)"
   interval = STDIN.gets.chomp.to_f
 
-  Wine.first(10).each do |wine|
+  total = Wine.count
+  counter = 1
+  Wine.all.each do |wine|
 
     url = wine.url
     page = Nokogiri::HTML(open(url).read, nil, 'utf-8')
@@ -13,10 +15,11 @@ task :wine_details_scraper => :environment do
     unless page.at_css(".description p:nth-of-type(1)").nil?
       if page.at_css(".description p:nth-of-type(1)").text.strip[0..13] == "Vintage tasted"
         p wine.tasting_note = page.at_css(".description p:nth-of-type(2)").text.strip
-        p wine.serving_temperature = page.at_css(".description p:nth-of-type(3)").text.strip.remove("\r\n         ").remove(":").capitalize
       else
         p wine.tasting_note = page.at_css(".description p:nth-of-type(1)").text.strip
-        p wine.serving_temperature = page.at_css(".description p:nth-of-type(2)").text.strip.remove("\r\n         ").remove(":").capitalize
+      end
+      page.css(".description p").each do |elt|
+        p wine.serving_temperature = elt.text.strip.remove("\r\n         ").remove(":").capitalize if elt.text.strip[0..7] == "Between:"
       end
     end
 
@@ -27,8 +30,9 @@ task :wine_details_scraper => :environment do
     end
 
     wine.save!
-    puts "--------------------"
+    puts "---------- #{counter}/#{total} ----------"
     sleep interval;
+    counter += 1
   end
 
   puts "Scraping complete!"
