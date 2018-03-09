@@ -66,7 +66,8 @@ task :vivino_scraper => :environment do
 		end
 
     puts "--------------------"
-    sleep interval;
+    interval_randomized = interval + rand(-2..2)
+    sleep interval_randomized;
 	end
 
   puts "Scraping complete!"
