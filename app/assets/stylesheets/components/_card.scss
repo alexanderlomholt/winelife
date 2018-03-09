@@ -6,11 +6,10 @@
   border: 1px solid rgb(240,240,240);
   text-align: center;
   border-radius: 10px;
-  height: 490px;
+  height: 480px;
   max-width: 320px;
   position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  font-family: montserrat;
   transition: all 0.2s ease-out;
   a {
     color: white;
@@ -29,7 +28,7 @@
 }
 
 .fa-star {
-  color: rgb(180, 17, 89);
+  color: #F55858;
 }
 
 .imgbox > img {
@@ -40,7 +39,8 @@
 /* TITLE */
 .winecard > h3 {
   letter-spacing: 1.4px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.4em;
 }
 
 /* BUTTON */
@@ -53,7 +53,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: none;
-  background-color: rgb(180, 17, 89);
+  background-color: #F55858;
   font-size: 0.9em;
   font-weight: 100;
   letter-spacing: 1.5px;
