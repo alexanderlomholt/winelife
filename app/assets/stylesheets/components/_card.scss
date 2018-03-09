@@ -12,6 +12,10 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   font-family: montserrat;
   transition: all 0.2s ease-out;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .winecard:hover {
