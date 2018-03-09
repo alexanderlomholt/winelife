@@ -21,13 +21,13 @@ class WinesController < ApplicationController
 
     # select wines by colour
     wines_match_colour_criteria = if (red && white && rose) || (!red && !white && !rose) # if user checks all boxes or none, it means that wine colour doesn`t matter
-       ['Red wine', 'White wine', 'Rose']
+       ['Red wine', 'White wine', 'Rosé']
     else
       arr = []
 
       arr << 'Red wine' if red
       arr << 'White wine' if white
-      arr << 'Rose' if rose
+      arr << 'Rosé' if rose
 
       arr
     end
