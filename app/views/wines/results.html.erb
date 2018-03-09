@@ -1,26 +1,25 @@
-<div id="wrapper">
-  <h1 class="list text-center">Your Wine list</h1>
-  <div class="container">
-	<div class="row">
-    <% @wines.each do |wine| %>
-  		<div class="col-xs-12 col-sm-6">
-  			<div class="white-box">
-  				<div>
-  					<h2 class="wine-name text-center"> <%= wine.name %> </h2>
-  					<div class="card-picture">
-  						<img class="product-image" src="<%= wine.photo_url %>" alt="">
-  					</div>
-  					<p class="card-description text-center"> Excellent Millésime pour ce 1er grand cru classée mondialement connu</p>
-  					<div class="card-rating">
-  						<p> <strong> Rating: </strong> <%= wine.rating %></p>
-  					</div>
-  					<h3 class="card-price"> <strong> Price: </strong> $<%= wine.price %></h3>
-            <%= link_to "More details", show_path(wine), class: "main-btn product-bt" %>
-  				</div>
-  			</div>
-  		</div>
-		<% end %>
-  </div>
+<h1 class="list text-center">Your Wine list</h1>
+<div class="container">
+<div class="row">
+  <% @wines.each do |wine| %>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="winecard">
+        <div class="cardheader">
+          <div class="rating">
+            <p><i class="fa fa-star"></i> <%= wine.rating %></p>
+          </div>
+          <div class="price">
+            <p>$ <%= wine.price %></p>
+          </div>
+        </div>
+        <div class="imgbox">
+          <img src="<%= wine.photo_url %>" alt="winebottle">
+        </div>
+        <h3><%= wine.name %></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <%= link_to "More details", show_path(wine), class: "main-btn" %>
+      </div>
+		</div>
+	<% end %>
 </div>
 </div>
-
