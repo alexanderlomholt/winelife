@@ -48,46 +48,49 @@ class WinesController < ApplicationController
     end
 
     # intersection of all search criteria
-    @wines = wines_match_colour & wines_match_meal & wines_match_budget
+    wines = wines_match_colour & wines_match_meal & wines_match_budget
 
     # order wines by rating
-    @wines.sort_by! { |wine| -wine.rating }
+    wines.sort_by! { |wine| -wine.rating }
 
-    # select only 6 best-rated wines
-    @wines = @wines.first(6)
-    @wines.each { |elt| puts elt.name }
-    puts "-----------"
+    # select only 6 best-rated wines available at nearest SAQ
+    @wines = []
+    @wine_availability = []
 
-    # TODO: DETECT NEAREST SAQ STORE ID
+    # detect nearest SAQ outlet
+    store_id = Store.near(location.coordinates, 20).first.store_identifier
 
-    # delete unavailable wines at array
-    @wines.each_with_index do |elt, i|
-      # ==== CHECK FOR WINE AVAILABILITY AT SPECIFIC SAQ OUTLET ====
-      store_id = Store.near(location.coordinates, 5).first.store_identifier
+    # CHECK FOR WINE AVAILABILITY AT NEAREST SAQ OUTLET
+    starting_time = Time.now
+    wines.each do |elt|
       product_id = elt.saq_code
       url = "https://www.saq.com/webapp/wcs/stores/servlet/SAQAjaxInventoryInStoreView?catalogId=50000&langId=-1&storeId=20002&productId=#{product_id}&storeInventoryId=#{store_id}"
-
       html_doc = Nokogiri::HTML(open(url).read)
 
-      content = html_doc.at_css('div:first-of-type')
-      # p content.text.strip
-      if content.text.strip[-1] =~ /[0-9]/
-        # puts "Wine is available"
+      content = html_doc.at_css('div:first-of-type').text.strip
+      if content[-1] =~ /[0-9]/
+        puts "Wine is available"
+        @wine_availability << content.scan(/[0-9]+/).first.to_i
+        @wines << elt
       else
-        # puts "wine not available"
-        @wines.delete_at(i)
+        puts "Wine is unavailable"
       end
-      # =============================================================
       p Store.where(store_identifier: store_id)
+      p elapsed_time = Time.now - starting_time
+      break if @wines.count == 6 || (@wines.count >= 2 && elapsed_time > 10.00) || (@wines.count >= 1 && elapsed_time > 15.00) || elapsed_time > 20.00
     end
 
-    @wines.each { |elt| p elt }
-
-
-    render :results
+    unless @wines.empty?
+      render :results
+    else
+      render :no_results
+    end
   end
 
   def results
+  end
+
+  def no_results
   end
 
   def show
