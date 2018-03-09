@@ -1,10 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700');
 
 // Define fonts for body and headers
-$body-font: "Montserrat","sans-serif";
-$headers-font: "Montserrat","sans-serif";
-$h1-font: "Roboto Slab", "serif";
+$body-font: "Nunito","sans-serif";
+$headers-font: "Nunito","sans-serif";
+$h1-font: "Nunito", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
