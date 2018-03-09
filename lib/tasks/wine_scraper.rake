@@ -56,7 +56,7 @@ task :wine_scraper => :environment do
 
           price = content.css("td.price a")[i].text
           p price
-          price2 = price[1..-1].gsub(",",".").gsub(/\u00A0/, "").to_f
+          price2 = (price[1..-1].gsub(/(\.|\,)/,"").to_f) / 100
           wine.price = price2
           p wine.price
 
