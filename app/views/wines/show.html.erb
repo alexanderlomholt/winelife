@@ -1,21 +1,24 @@
 <div class="results-page">
   <div class="flexbox-show">
     <div class="flexbox-item-show">
-      <%= image_tag "pinot_noir.jpeg"  %>
+      <img src="<%= @wine.photo_url %>" alt="">
     </div>
-      <div class="flexbox-item-show">
-       <source>
-        <h1>le Capybara</h1>
-        <p>A fine wine for the most safisticated of Rodents.</p>
-        <break>
-        <h4>Tasting note</h4>
-        <p>a minerality that comes from the terroir.</p>
-        <h4>serving tempature</h4>
-        <p>14 to 18ºC</p>
-      </div>
+    <div class="flexbox-item-show">
+      <h1><%= @wine.name %></h1>
+      <h5><strong><%= @wine.colour %></strong></h5>
+      <h5><strong>Country:</strong> <%= @wine.country %></h5>
+      <br>
+      <h4><strong>Tasting note</strong></h4>
+      <% if @wine.tasting_note %>
+        <p> <%= @wine.tasting_note %> </p>
+      <% else %>
+        <p>Tasting note unavailable</p>
+      <% end %>
+      <br>
+      <h5><strong>Serving temperature:</strong> <%= @wine.serving_temperature %></h5>
+      <h5><strong>Degree of alcohol:</strong> <%= @wine.alcohol_percent %></h5>
     </div>
   </div>
+</div>
 
-
- <!-- mobile -->
 
