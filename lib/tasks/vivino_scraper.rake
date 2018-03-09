@@ -29,21 +29,23 @@ task :vivino_scraper => :environment do
   puts "Please enter interval between each request (in seconds)"
   interval = STDIN.gets.chomp.to_f
 
-  puts "Please enter begin index"
-  begin_index = STDIN.gets.chomp.to_i
+  # puts "Please enter begin index"
+  # begin_index = STDIN.gets.chomp.to_i
 
-  puts "Please enter endind index"
-  end_index = STDIN.gets.chomp.to_i
+  # puts "Please enter endind index"
+  # end_index = STDIN.gets.chomp.to_i
 
-	Wine.all[begin_index..end_index].each do |wine|
+  counter = 0
+  total = Wine.where(rating: nil).count
+	Wine.where(rating: nil).each do |wine|
     p wine_name_normalized = wine.name.gsub(/\s+/, "%20").unicode_normalize(:nfkd).encode('ASCII', replace: '')
 		url = "https://www.vivino.com/search/wines?q=#{wine_name_normalized}"
 
-		html_file = open(url).read
-		html_doc = Nokogiri::HTML(html_file)
-		wine_card = html_doc.search('.card').first
-
 		begin
+      html_file = open(url).read
+      html_doc = Nokogiri::HTML(html_file)
+      wine_card = html_doc.search('.card').first
+
 			rating = wine_card.search('.average__number').first.text.gsub(",",".").to_f
 			reviews_number = wine_card.search('.average__stars .text-micro').text.gsub(" ratings", "")
 
@@ -61,12 +63,13 @@ task :vivino_scraper => :environment do
 			# refacto; put in methods (if time)
 			wine.update(rating: rating, reviews_number: reviews_number, pairs_with_meat: pairs[:with_meat], pairs_with_seafood: pairs[:with_fish], pairs_with_cheese: pairs[:with_cheese] )
 
-		rescue NotMethodError => e
+		rescue => e
 			puts "Error #{e}"
 		end
 
-    puts "--------------------"
-    interval_randomized = interval + rand(-2..2)
+    counter += 1
+    puts "---------#{counter}/#{total}-----------"
+    interval_randomized = interval + rand(-1..1)
     sleep interval_randomized;
 	end
 
