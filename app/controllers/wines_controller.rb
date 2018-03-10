@@ -21,13 +21,13 @@ class WinesController < ApplicationController
 
     # select wines by colour
     wines_match_colour_criteria = if (red && white && rose) || (!red && !white && !rose) # if user checks all boxes or none, it means that wine colour doesn`t matter
-       ['Red wine', 'White wine', 'Rose']
+       ['Red wine', 'White wine', 'Rosé']
     else
       arr = []
 
       arr << 'Red wine' if red
       arr << 'White wine' if white
-      arr << 'Rose' if rose
+      arr << 'Rosé' if rose
 
       arr
     end
@@ -74,7 +74,6 @@ class WinesController < ApplicationController
 
     # detect nearest SAQ outlet
     store_id = Store.near(location.coordinates, 20).first.store_identifier
-
     puts "store <detected>  </detected>"
 
     puts "finished building query"
@@ -82,7 +81,7 @@ class WinesController < ApplicationController
     starting_time = Time.now
     query.each do |elt|
       product_id = elt.saq_code
-      url = "https://www.saq.com/webapp/wcs/stores/servlet/SAQAjaxInventoryInStoreView?catalogId=50000&langId=-1&storeId=20002&productId=#{product_id}&storeInventoryId=#{store_id}"
+      url = "https://www.saq.com/webapp/wcs/stores/servlet/SAQAjaxInventoryInStoreView?catalogId=50000&langId=-1&storeId=20002&productId=#{product_id}&storeInventoryId=#{@store.store_identifier}"
       html_doc = Nokogiri::HTML(open(url).read)
 
       content = html_doc.at_css('div:first-of-type').text.strip
@@ -93,7 +92,6 @@ class WinesController < ApplicationController
       else
         puts "Wine is unavailable"
       end
-      p Store.where(store_identifier: store_id)
       p elapsed_time = Time.now - starting_time
       break if @wines.count == 6 || (@wines.count >= 2 && elapsed_time > 10.00) || (@wines.count >= 1 && elapsed_time > 15.00) || elapsed_time > 20.00
     end
@@ -112,6 +110,7 @@ class WinesController < ApplicationController
   end
 
   def show
+    @wine = Wine.find(params[:id])
   end
 
   private

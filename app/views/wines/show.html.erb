@@ -1,89 +1,24 @@
-<!-- <div class="results-page">
-  <div class="flexbox-show">
-    <div class="flexbox-item-show">
-      <%= image_tag "pinot_noir.jpeg"  %>
-    </div>
-    <div class="flexbox-item-show">
-     <source>
-      <h1>le Capybara</h1>
-      <p>A fine wine for the most safisticated of Rodents.</p>
-      <break>
-        <h4>Tasting note</h4>
-        <p>a minerality that comes from the terroir.</p>
-        <h4>serving tempature</h4>
-        <p>14 to 18ºC</p>
-      </div>
-    </div>
-  </div>
- -->
 
   <!-- mobile -->
 
 
 
   <!-- desktop -->
-
-  <div class="wrapper">
-    <div class="main-flex">
-      <div class="main-flex-item">
-        <img src="<%= wine.photo_url %>" alt="winebottle">
-      </div>
-    </div>
-    <div class="main-flex-item">
-      <h1><%= wine.name %></h1>
-      <h2> <% wine.country %></h2>
-      <h2><% wine.year %></h2>
-      <p><% wine.testing_note %></p>
-      <div class="color">
-        <h3> Color: </h3>
-        <div class="color-flex">
-          <div class="color-icon">
-            <%= image_tag "red-wine.png", height: 40 %>
-          </div>
-          <div class="color-text">
-            <p> <%= wine.colour %></p>
-          </div>
-          <div class="food-pairing">
-            <h3> Food-pairings: </h3>
-            <div class="food-flex">
-              <div class="food-icon">
-                <%= image_tag "red-wine.png", height: 40 %>
-              </div>
-              <div class="food-text">
-               <%if wine.meat %>
-               <%= image_tag "006-steak.png", height: 40 %>
-               <% elsif wine.fish %>
-               <%= image_tag "023-fish.png", height: 40 %>
-               <% elsif wine.cheese %>
-               <%= image_tag "018-cheese.png", height: 40 %>
-             </div>
-             <div class="variety">
-              <h3> Variety:</h3>
-              <div class="variety-flex">
-                <div class="variety-icon">
-                  <%= image_tag "red-wine.png", height: 40 %>
-                </div>
-                <div class="variety-text">
-                  <%= wine.variety %>
-                </div>
-              </div>
-            </div>
-            <div class="rating">
-              <h3> Rating:</h3>
-              <div class="rating-text">
-               <p><%= wine.rating %>/5</p> 
-             </div>
-           </div>
-           <div class="back-btn">
-            <%= link_to "More details", results_path(wine), class: "main-btn" %>
-          <div class="price">
-            <h3>Price:</h3>
-          </div>
-
-          </div>
-        </div>
-      </div>
-
+      <h1><%= @wine.name %></h1>
+      <h5><strong><%= @wine.colour %></strong></h5>
+      <h5><strong>Country:</strong> <%= @wine.country %></h5>
+      <br>
+      <h4><strong>Tasting note</strong></h4>
+      <% if @wine.tasting_note %>
+        <p> <%= @wine.tasting_note %> </p>
+      <% else %>
+        <p>Tasting note unavailable</p>
+      <% end %>
+      <br>
+      <h5><strong>Serving temperature:</strong> <%= @wine.serving_temperature %></h5>
+      <h5><strong>Degree of alcohol:</strong> <%= @wine.alcohol_percent %></h5>
     </div>
   </div>
 </div>
+
+
