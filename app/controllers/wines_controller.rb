@@ -73,8 +73,8 @@ class WinesController < ApplicationController
     @wine_availability = []
 
     # detect nearest SAQ outlet
-    store_id = Store.near(location.coordinates, 20).first.store_identifier
-    puts "store <detected>  </detected>"
+    @store = Store.near(location.coordinates, 20).first
+    puts "store detected"
 
     puts "finished building query"
     # CHECK FOR WINE AVAILABILITY AT NEAREST SAQ OUTLET
