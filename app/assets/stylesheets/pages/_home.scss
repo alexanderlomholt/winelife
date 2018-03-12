@@ -16,7 +16,7 @@ td {
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
   td {
     padding: 4px;
   }
@@ -32,4 +32,16 @@ td {
     padding-right: 0px;
     padding-left: 0px;
   }
+}
+
+@media only screen and (max-width: 359px) {
+  .cb-container, .checkmark {
+    height: 90px;
+    width: 90px;
+  }
+
+  .main-content {
+    margin: 10px auto;
+  }
+
 }
