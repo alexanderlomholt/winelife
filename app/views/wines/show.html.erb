@@ -1,24 +1,112 @@
 
-  <!-- mobile -->
+<!-- mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 
-  <!-- desktop -->
-      <h1><%= @wine.name %></h1>
-      <h5><strong><%= @wine.colour %></strong></h5>
-      <h5><strong>Country:</strong> <%= @wine.country %></h5>
-      <br>
-      <h4><strong>Tasting note</strong></h4>
-      <% if @wine.tasting_note %>
-        <p> <%= @wine.tasting_note %> </p>
-      <% else %>
-        <p>Tasting note unavailable</p>
-      <% end %>
-      <br>
-      <h5><strong>Serving temperature:</strong> <%= @wine.serving_temperature %></h5>
-      <h5><strong>Degree of alcohol:</strong> <%= @wine.alcohol_percent %></h5>
+
+
+   <div class="main-container">
+    <div class="header">
+      <div class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <div class="favorite">
+        <i class="fas fa-heart"></i>
+      </div>
+    </div>
+    <div class="product-image">
+      <img src="http://s7d9.scene7.com/is/image/SAQ/12868835-1" alt="">
+    </div>
+    <div class="description">
+      <h3> Château Margaux</h3>
+      <h4> France</h4>
+      <p class="details-wine text-justify"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum reiciendis deserunt minus architecto optio, labore eligendi laborum amet veritatis enim, blanditiis non laboriosam quaerat aliquid, necessitatibus aspernatur quod quidem dicta.</p>
+      <p class="more-infos text-center"> MORE INFOS </p>
+    </div>
+
+
+    <div class="more-description container invisible">
+      <div class="title row">
+        <div class="col-xs-6 d-inline-block"> Color </div>
+        <div class="col-xs-6 d-inline-block"> Variety </div>
+      </div>
+      <div class="info-details row">
+        <div class="col-xs-6 d-inline-block">
+         <p class="col-xs-2 d-inline-block icon-min-width "> <%= image_tag "001-wine.png", height: 40 %> </p>
+         <p class="col-xs-6 d-inline-block"> Red wine</p>
+       </div>
+       <div class="col-xs-6 d-inline-block ">
+        <p class="col-xs-2 d-inline-block icon-min-width "><%= image_tag "005-fruit.png", height: 40 %></p>
+        <p class="col-xs-6 d-inline-block"> Syrah</p>
+      </div>
+    </div>
+    <div class="title row">
+      <p class="col-xs-6 d-inline-block"> Serving Temperature </p>
+      <p class="col-xs-6 d-inline-block"> Degree of alcohol </p>
+    </div>
+    <div class="info-details row">
+      <div class="col-xs-6 d-inline-block">
+       <p class="col-xs-2 d-inline-block icon-min-width ">  <%= image_tag "002-temperature.png", height: 40 %> </p>
+       <p class="col-xs-6 d-inline-block"> Between 16°C and 18°C</p>
+     </div>
+     <div class="info-details row">
+      <p class="col-xs-1 d-inline-block icon-min-width ">  <%= image_tag "001-signs.png", height: 40 %> </p>
+      <p class="col-xs-2 d-inline-block">14.5%</p>
     </div>
   </div>
+  <div class="title row">
+   <p class="col-xs-6 d-inline-block">Food Pairing </p>
+   <p class="col-xs-6 d-inline-block">Rating </p>
+ </div>
+ <div class="info-details row">
+  <div class="col-xs-6 d-inline-block"> 
+    <p class="col-xs-2 d-inline-block icon-min-width ">  <%= image_tag "006-steak.png", height: 40 %> </p>
+    <p class="col-xs-2 d-inline-block icon-min-width ">  <%= image_tag "023-fish.png", height: 40 %> </p>
+    <p class="col-xs-2 d-inline-block icon-min-width ">  <%= image_tag "028-cheese.png", height: 40 %> </p>
+  </div>
+  <div class="row">
+   <p class="col-xs-1 d-inline-block icon-min-width "> <%= image_tag "001-favorite.png", height: 40 %> </p>
+   <p class="col-xs-2 d-inline-block">3.7/5</p>
+ </div>
 </div>
+<div class="map-container">
+  <p class="find text-center"> WANT TO FIND ME </p>
+  <div class="map">
+
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<script>  
+  $( ".favorite").click(function() {
+
+
+    $(".fa-heart").toggleClass( "is-clicked" );
+       // if( $(".is-clicked").length )         // use this if you are using id to check
+       //  $(".fa-heart").removeClass( "is-clicked" );
+       // else
+       //  $(".fa-heart").addClass( "is-clicked" );
+     });
+  $( ".more-infos").click(function() {
+
+
+    $(".more-description").toggleClass( "invisible" );
+
+       if( $(".invisible").length )         // use this if you are using id to check
+       $(".more-infos").html( "MORE INFOS" );
+       else
+        
+       $(".more-infos").html( "LESS INFOS" );
+     });
+   </script>
+
+
+
 
 

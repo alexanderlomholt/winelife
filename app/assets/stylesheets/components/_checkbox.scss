@@ -66,7 +66,7 @@ td {
 
 /* When the checkbox is checked, add a blue background */
 .cb-container input:checked ~ .checkmark {
-  background-color: #FFC86F;
+  background-color: rgba(246,84,106,0.7);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

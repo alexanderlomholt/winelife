@@ -1,0 +1,105 @@
+
+@-ms-viewport {
+	width: device-width;
+}
+
+.header {
+	height: 40px;
+}
+
+.back-btn {
+	float: left;
+	padding: 7px 11px 5px 40px;
+	cursor: pointer;
+
+
+}
+
+.favorite {
+	float: right;
+	padding: 7px 40px 5px 7px;
+	cursor: pointer;
+}
+
+.fa-arrow-left {
+	color: #F6546A;
+}
+
+.fa-heart {
+	color: lightgrey;
+
+}
+
+.icon-min-width {
+	min-width: 70px;
+
+}
+.is-clicked {
+	color: #F6546A !important;
+}
+
+.product-image {
+	margin: auto;
+	width: 150px;
+	padding-bottom: 40px;
+}
+
+.product-image img {
+	max-width: 100%;
+}
+
+.description {
+	background-color: #F6546A;
+	color: white;
+	padding-left: 20px;
+	padding-top: 20px;
+
+	h4 {
+		font-weight: 100;
+		font-size: 16px;
+	}
+
+	p {
+		font-size: 12px;
+		font-weight: 100;
+		padding-right: 20px;
+
+	}
+
+}
+
+.more-infos {
+	padding-top: 45px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.more-description {
+	background-color: #F6546A;
+	margin-top: -15px;
+	color: white;
+	font-weight: 100;
+	font-size: 12px;
+
+}
+
+.title {
+	font-weight: 100;
+	text-decoration: underline;
+	padding-bottom: 10px;
+
+}
+
+.more-description .info-details  {
+	font-size: 12px;
+
+}
+
+
+.find {
+	font-size: 12px;
+	padding: 20px;
+}
+
