@@ -1,45 +1,43 @@
-<div class="container">
-  <div class="main-content">
-     <div class="col-md-6 col-md-offset-3">
-       <h2 class="form-title">Wine search</h2>
-       <form action="/" method="POST">
-         <table>
-           <tr>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="red">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "red-wine.png", height: 40 %>
-                     <p>Red</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="white">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "white-wine.png", height: 40 %>
-                     <p>White</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="rose">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "rose-wine.png", height: 40 %>
-                     <p>Rosé</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-           </tr>
-
+<div class="container main-content">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="form-title">Find your perfect wine</h2>
+    <form action="/" method="POST">
+      <table>
+        <tr>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="red">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "red-wine.png", height: 40 %>
+                  <p>Red</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="white">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "white-wine.png", height: 40 %>
+                  <p>White</p>
+                </div>
+              </span>
+            </label>
+          </td>
+          <td>
+            <label class="cb-container">
+              <input type="checkbox" value="selected" name="rose">
+              <span class="checkmark">
+                <div class="checkmark-content">
+                  <%= image_tag "rose-wine.png", height: 40 %>
+                  <p>Rosé</p>
+                </div>
+              </span>
+            </label>
+          </td>
+        </tr>
            <tr>
              <td>
                <label class="cb-container">
