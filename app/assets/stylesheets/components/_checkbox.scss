@@ -1,9 +1,5 @@
  /* Customize the label (the container) */
 
-td {
-  padding: 10px 10px;
-}
-
 .cb-container {
   display: inline-block;
   position: relative;
@@ -13,8 +9,8 @@ td {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   margin: 0px;
 }
 
@@ -30,8 +26,8 @@ td {
   position: absolute;
   top: 0;
   left: 0;
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   border-radius: 5px;
   background-color: #eee;
   display: flex;
@@ -93,3 +89,26 @@ td {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+/* change grid item size < 600px width */
+@media only screen and (max-width: 599px) {
+  .cb-container, .checkmark {
+    height: 100px;
+    width: 100px;
+  }
+
+}
+
+@media only screen and (max-width: 359px) {
+  .cb-container, .checkmark {
+    height: 90px;
+    width: 90px;
+  }
+
+}
+
+
+
+
+
+
