@@ -1,6 +1,6 @@
  /* Customize the label (the container) */
 
-.cb-container {
+ .cb-container {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -108,7 +108,12 @@
 }
 
 
-
+#subtmit-btn {
+  background-color: #F6546A;
+  padding: 18px;
+  border-radius: 5px;
+  width: 315px;
+}
 
 
 
