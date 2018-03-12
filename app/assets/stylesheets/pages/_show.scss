@@ -70,7 +70,7 @@
 
 .more-infos {
 	padding-top: 45px;
-	padding-bottom: 20px;
+	padding-bottom: 12px;
 	font-size: 16px;
 	cursor: pointer;
 	text-decoration: underline;
@@ -97,9 +97,45 @@
 
 }
 
-
+.icon-left {
+	padding-left: 20px;
+}
 .find {
 	font-size: 12px;
 	padding: 20px;
 }
 
+.details {
+	display: flex;
+}
+
+.title-left {
+	padding-bottom: 10px;
+	padding-left: 20px;
+	text-decoration: underline;
+}
+
+.title-right {
+	padding-bottom: 10px;
+	text-decoration: underline;
+
+}
+
+.info {
+    padding-top: 11px;
+    padding-right: 11px;
+    padding-left: 12px;
+}
+
+
+
+ol {
+	float: left;
+	margin-left: 10px;
+}
+
+.col-xs-6  h3 {
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 17px;
+}
