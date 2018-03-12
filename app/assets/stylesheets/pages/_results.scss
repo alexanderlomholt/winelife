@@ -3,6 +3,12 @@ h1 {
   margin: 60px 0 30px 0;
 }
 
-body {
+.wrapper-results {
   margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 359px) {
+  .wrapper-results {
+    margin-bottom: 30px;
+  }
 }
