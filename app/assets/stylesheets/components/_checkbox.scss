@@ -36,6 +36,7 @@
   justify-content: space-around;
   transition: 0.2s ease;
   img {
+    transition: 0.2s ease;
     filter: invert(0%);
   }
 }
