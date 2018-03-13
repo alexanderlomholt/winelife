@@ -4,7 +4,7 @@
   <div class="row">
     <% counter = 0 %>
     <% @wines.each do |wine| %>
-  		<div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="winecard">
           <div class="cardheader">
             <div class="rating">
@@ -17,13 +17,20 @@
           <div class="imgbox">
             <img src="<%= wine.photo_url %>" alt="winebottle">
           </div>
-          <h3><%= wine.name %></h3>
-          <p><%= @store.banner %> <%= @store.name %></p>
-          <p>Available quantity: <%= @wine_availability[counter] %> bottles</p>
+          <h3><%= wine.name.split[0..3].join(' ') %></h3>
+          <p class="availability-text"> <%= @wine_availability[counter] %>
+            <% if @wine_availability[counter] > 1 %>
+              bottles
+            <% else %>
+              bottle
+            <% end %>
+            available at<br>
+            <%= @store.banner %> <%= @store.name %>
+          </p>
           <%= link_to "More details", show_path(wine), class: "main-btn" %>
         </div>
   		</div>
-      <% counter += 1 %>
+    <% counter += 1 %>
   	<% end %>
   </div>
   <br>

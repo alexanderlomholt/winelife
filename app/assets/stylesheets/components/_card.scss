@@ -16,10 +16,10 @@
     color: white;
     text-decoration: none;
   }
-  p {
-  opacity: 0.9;
-  font-size: 0.7em!important;
-  margin-bottom: 2px;
+  .availability-text {
+    font-size: 0.8em;
+    font-weight: lighter;
+    padding-bottom: 15px;
   }
 }
 
@@ -34,7 +34,7 @@
 
 .imgbox > img {
   margin-top: 5px;
-  max-height: 210px;
+  max-height: 200px;
 }
 
 /* TITLE */
@@ -67,8 +67,12 @@
 
 /* CARDHEADER */
 .cardheader {
-  font-size: 1.3em;
-  font-weight: 800;
   display: flex;
   justify-content: space-between;
+  p {
+    opacity: 0.9;
+    font-size: 0.9em;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
 }
