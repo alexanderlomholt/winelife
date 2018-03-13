@@ -6,7 +6,8 @@
   border: 1px solid rgb(240,240,240);
   text-align: center;
   border-radius: 10px;
-  height: 480px;
+  min-height: 480px;
+  max-height: 560px;
   max-width: 320px;
   position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -15,16 +16,16 @@
     color: white;
     text-decoration: none;
   }
+  p {
+  opacity: 0.9;
+  font-size: 0.7em!important;
+  margin-bottom: 2px;
+  }
 }
 
 .winecard:hover {
   transform: scale(1.03);
   box-shadow: 0 0 60px rgba(0,0,0,0.1)
-}
-
-.winecard p {
-  opacity: 0.9;
-  font-size: 0.7em!important;
 }
 
 .fa-star {

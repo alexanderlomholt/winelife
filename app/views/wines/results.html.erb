@@ -3,6 +3,7 @@
   <div class="container">
   <div class="row">
     <% @wines.each do |wine| %>
+      <% counter = 0 %>
   		<div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="winecard">
           <div class="cardheader">
@@ -17,9 +18,12 @@
             <img src="<%= wine.photo_url %>" alt="winebottle">
           </div>
           <h3><%= wine.name %></h3>
+          <p><%= @store.banner %> <%= @store.name %></p>
+          <p>Available quantity: <%= @wine_availability[counter] %> bottles</p>
           <%= link_to "More details", show_path(wine), class: "main-btn" %>
         </div>
   		</div>
+      <% counter += 1 %>
   	<% end %>
   </div>
   <br>
