@@ -1,8 +1,13 @@
 <div class="navbar-winelife">
   <!-- Logo -->
+  <!-- If page is home add white logo else add dark logo -->
   <%= link_to root_path, class: "navbar-winelife-brand" do %>
-    <p id="logo">//WINELIFE</p>
-  <!-- <%= image_tag "Wine-Logo-Design.png", height: 80 %>  -->
+    <% if action_name == "home" %>
+      <p id="logo-white">//WINELIFE</p>
+    <!-- <%= image_tag "Wine-Logo-Design.png", height: 80 %>  -->
+    <% else %>
+      <p id="logo-dark">//WINELIFE</p>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->
