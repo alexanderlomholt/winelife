@@ -30,6 +30,14 @@ h2 {
   }
 }
 
+.submit-btn {
+  background-color: #F6546A;
+  padding: 18px;
+  border-radius: 5px;
+  width: 315px;
+  border: none;
+  color: white;
+}
 
 @media only screen and (max-width: 599px) {
   td {
@@ -50,22 +58,13 @@ h2 {
 }
 
 @media only screen and (max-width: 359px) {
-  .cb-container, .checkmark {
-    height: 90px;
-    width: 90px;
-  }
-
   .main-content {
     margin: 10px auto;
   }
 
+  .submit-btn {
+    width: 290px;
+  }
+
 }
 
-.submit-btn {
-  background-color: #F6546A;
-  padding: 18px;
-  border-radius: 5px;
-  width: 315px;
-  border: none;
-  color: white;
-}

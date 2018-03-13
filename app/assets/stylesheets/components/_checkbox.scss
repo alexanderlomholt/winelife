@@ -59,15 +59,6 @@
   font-weight: lighter;
 }
 
-/* On mouse-over, add a grey background color */
-.cb-container:hover input ~ .checkmark {
-  /*opacity: 0.7;*/
-  background-color: rgba(255,84,106,1.0);
-  color: white;
-  img {
-    filter: invert(100%);
-  }
-}
 
 /* When the checkbox is checked, add a blue background */
 .cb-container input:checked ~ .checkmark {
@@ -103,6 +94,18 @@
   transform: rotate(45deg);
 }
 
+@media only screen and (min-width: 1080px){
+  .cb-container:hover input ~ .checkmark {
+    /*opacity: 0.7;*/
+    background-color: rgba(255,84,106,1.0);
+    color: white;
+    img {
+      filter: invert(100%);
+    }
+  }
+}
+
+
 /* change grid item size < 600px width */
 @media only screen and (max-width: 599px) {
   .cb-container, .checkmark {
@@ -119,14 +122,4 @@
   }
 
 }
-
-
-#subtmit-btn {
-  background-color: #F6546A;
-  padding: 18px;
-  border-radius: 5px;
-  width: 315px;
-}
-
-
 
