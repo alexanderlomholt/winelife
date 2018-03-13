@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308164440) do
+ActiveRecord::Schema.define(version: 20180313205813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "wine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["wine_id"], name: "index_likes_on_wine_id"
+  end
 
   create_table "stores", force: :cascade do |t|
     t.string "banner"
@@ -60,13 +69,15 @@ ActiveRecord::Schema.define(version: 20180308164440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "saq_code"
-    t.integer "reviews_number"
     t.string "url"
     t.string "volume"
     t.string "country"
+    t.integer "reviews_number"
     t.string "tasting_note"
     t.string "serving_temperature"
     t.string "alcohol_percent"
   end
 
+  add_foreign_key "likes", "users"
+  add_foreign_key "likes", "wines"
 end
