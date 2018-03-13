@@ -14,6 +14,7 @@
   margin: 0px;
 }
 
+
 /* Hide the browser's default checkbox */
 .cb-container input {
   position: absolute;
@@ -29,11 +30,14 @@
   height: 130px;
   width: 130px;
   border-radius: 5px;
-  background-color: #eee;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
   transition: 0.2s ease;
+  img {
+    filter: invert(0%);
+  }
 }
 
 .checkmark-content {
@@ -57,12 +61,21 @@
 
 /* On mouse-over, add a grey background color */
 .cb-container:hover input ~ .checkmark {
-  opacity: 0.7;
+  /*opacity: 0.7;*/
+  background-color: rgba(255,84,106,1.0);
+  color: white;
+  img {
+    filter: invert(100%);
+  }
 }
 
 /* When the checkbox is checked, add a blue background */
 .cb-container input:checked ~ .checkmark {
-  background-color: rgba(246,84,106,0.7);
+  background-color: rgba(246,84,106,1.0);
+  color: white;
+  img {
+    filter: invert(100%);
+  }
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
