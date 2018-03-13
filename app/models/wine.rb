@@ -14,5 +14,5 @@ class Wine < ApplicationRecord
   scope :budget_2, -> { where('price > 15').where('price <= 25') }
   scope :budget_3, -> { where('price > 25') }
 
-  has_many :dashboard
+  has_many :likes
 end
