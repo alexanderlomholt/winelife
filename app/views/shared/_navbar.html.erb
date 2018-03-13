@@ -1,7 +1,8 @@
 <div class="navbar-winelife">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-winelife-brand" do %>
-  <%= image_tag "Wine-Logo-Design.png", height: 80 %>
+    <p id="logo">//WINELIFE</p>
+  <!-- <%= image_tag "Wine-Logo-Design.png", height: 80 %>  -->
   <% end %>
 
   <!-- Right Navigation -->
@@ -32,9 +33,9 @@
   </div>
   <!-- Login link (when logged out) -->
   <%else %>
-  <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-1" %>
+    <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-2", id: "signup-link" %>
 
-  <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-2" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-1", id: "login-link" %>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-winelife-item hidden-md hidden-lg">

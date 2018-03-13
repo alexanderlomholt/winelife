@@ -1,9 +1,9 @@
 /* Main navbar */
 .navbar-winelife {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 10px 10px 0 rgba(0,0,0,0.03);
-  background: white;
+  /*box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 10px 10px 0 rgba(0,0,0,0.03);*/
+  background: transparent;
   transition: all 0.3s ease;
-  height: 50px;
+  height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -14,7 +14,6 @@
 .navbar-winelife-brand img {
   max-height: 60px;
 }
-
 
 /* User Avatar */
 .navbar-winelife .avatar {
@@ -39,11 +38,37 @@
 
 /* Navbar link */
 .navbar-winelife-link {
-  color: #970736;
+  color: #fff;
   font-size: 16px;
+  margin: 0 5px;
+  padding: 4px 20px;
+  border: 2px solid rgba(246,84,106,1.0);
+  border-radius: 5px;
+  color: rgba(246,84,106,1.0);
 }
+
+#login-link {
+  background-color: rgba(246,84,106,1.0);
+  color: white;
+}
+#login-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#signup-link {
+  background-color: transparent;
+  color: rgba(246,84,106,1.0);
+}
+#signup-link:hover {
+  color: rgba(246,84,106,1.0);
+  text-decoration: none;
+}
+
+
 .navbar-wagon-link:hover {
-  color:black;
+  color: white!important;
+  /*not working due to bootstrap and specificity*/
 }
 
 /* Dropdown menu */
