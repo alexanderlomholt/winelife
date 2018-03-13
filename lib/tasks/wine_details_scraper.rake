@@ -5,9 +5,11 @@ task :wine_details_scraper => :environment do
   puts "Please enter interval between each request (in seconds)"
   interval = STDIN.gets.chomp.to_f
 
-  total = Wine.count
+  total = Wine.where(variety: nil).count
   counter = 1
-  Wine.all.each do |wine|
+  Wine.where(variety: nil).each do |wine|
+
+    puts "Fetching information for #{wine.name}, code #{wine.saq_code}"
 
     url = wine.url
     page = Nokogiri::HTML(open(url).read, nil, 'utf-8')
@@ -17,13 +19,11 @@ task :wine_details_scraper => :environment do
       if p_content[0..7] == "Between:"
         puts "Serving temp"
         p wine.serving_temperature = p_content.remove("\r\n         ").remove(":").capitalize
-      else
+      elsif p_content.length > 60
         puts "Tasting note"
         p wine.tasting_note = p_content
       end
     end
-
-    wine.tasting_note = nil if wine.tasting_note.include?("Drink now")
 
     # unless page.at_css(".description p:nth-of-type(1)").nil?
     #   if page.at_css(".description p:nth-of-type(1)").text.strip[0..13] == "Vintage tasted"
@@ -41,6 +41,12 @@ task :wine_details_scraper => :environment do
         puts "Degree of alcohol"
         p wine.alcohol_percent = elt.at_css(".right").text.strip
       end
+      if elt.at_css(".left").text.strip == "Grape variety(ies)"
+        puts "Variety"
+        variety_array = []
+        elt.css(".right td.col1").each { |variety| variety_array << variety.text.strip }
+        p wine.variety = variety_array.join(", ")
+      end
     end
 
     wine.save!
@@ -51,4 +57,3 @@ task :wine_details_scraper => :environment do
 
   puts "Scraping complete!"
 end
-
