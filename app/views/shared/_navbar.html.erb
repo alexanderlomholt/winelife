@@ -15,8 +15,7 @@
 
     <% if user_signed_in? %>
     <!-- Links when logged in -->
-    <%= link_to "List", "#", class: "navbar-winelife-item navbar-winelife-link" %>
-    <%= link_to "Account", "#", class: "navbar-winelife-item navbar-winelife-link" %>
+    <%= link_to "Likes", likes_path, class: "navbar-winelife-item navbar-winelife-link" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-winelife-item">

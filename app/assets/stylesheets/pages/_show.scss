@@ -48,8 +48,11 @@ ol {
 
 .product-image {
   margin: auto;
-  width: 150px;
+  width: 400px;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .product-image img {
@@ -96,7 +99,6 @@ ol {
 	color: white;
 	font-weight: 100;
 	font-size: 12px;
-
 }
 
 .display-none{
@@ -148,4 +150,10 @@ ol {
   font-size: 20px;
   font-weight: 500;
   margin-top: 17px;
+}
+
+@media only screen and (max-width: 399px) {
+  .product-image {
+    width: 150px;
+  }
 }
