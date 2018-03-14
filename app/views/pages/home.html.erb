@@ -1,129 +1,123 @@
 <body class="background-image">
 <div class="container main-content">
-  <div class="col-md-6 col-md-offset-3">
-    <!-- <h2 class="form-title">Find your wine</h2> -->
+  
+  <div class="row">
     <form action="/" method="POST">
-      <table>
-        <tr>
-          <td>
-            <label class="cb-container">
-              <input type="checkbox" value="selected" name="red">
-              <span class="checkmark">
-                <div class="checkmark-content">
-                  <%= image_tag "001-wine.png", height: 40 %>
-                  <p>Red</p>
-                </div>
-              </span>
-            </label>
-          </td>
-          <td>
-            <label class="cb-container">
-              <input type="checkbox" value="selected" name="white">
-              <span class="checkmark">
-                <div class="checkmark-content">
-                  <%= image_tag "001-wine.png", height: 40 %>
-                  <p>White</p>
-                </div>
-              </span>
-            </label>
-          </td>
-          <td>
-            <label class="cb-container">
-              <input type="checkbox" value="selected" name="rose">
-              <span class="checkmark">
-                <div class="checkmark-content">
-                  <%= image_tag "001-wine.png", height: 40 %>
-                  <p>Rosé</p>
-                </div>
-              </span>
-            </label>
-          </td>
-        </tr>
-           <tr>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="meat">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "006-steak.png", height: 40, class: "addwhite" %>
-                     <p>Meat & poultry</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="fish">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "023-fish.png", height: 40 %>
-                     <p>Fish & seafood</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="cheese">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <%= image_tag "028-cheese.png", height: 40 %>
-                     <p>Cheese</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-           </tr>
+  
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+        <input type="checkbox" value="selected" name="red">
+        <span class="checkmark">
+          <div class="checkmark-content">
+            <%= image_tag "001-wine.png" %>
+            <p>Red</p>
+          </div>
+        </span>
+      </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+        <input type="checkbox" value="selected" name="white">
+        <span class="checkmark">
+          <div class="checkmark-content">
+            <%= image_tag "001-wine.png" %>
+            <p>White</p>
+          </div>
+        </span>
+      </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+        <input type="checkbox" value="selected" name="rose">
+        <span class="checkmark">
+          <div class="checkmark-content">
+            <%= image_tag "001-wine.png" %>
+            <p>Rosé</p>
+          </div>
+        </span>
+      </label>
+    </div>
+   
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+         <input type="checkbox" value="selected" name="meat">
+         <span class="checkmark">
+           <div class="checkmark-content">
+             <%= image_tag "006-steak.png", class: "addwhite" %>
+             <p>Meat & poultry</p>
+           </div>
+         </span>
+      </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+       <label class="cb-container">
+         <input type="checkbox" value="selected" name="fish">
+         <span class="checkmark">
+           <div class="checkmark-content">
+             <%= image_tag "023-fish.png" %>
+             <p>Fish & seafood</p>
+           </div>
+         </span>
+       </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+       <input type="checkbox" value="selected" name="cheese">
+       <span class="checkmark">
+         <div class="checkmark-content">
+           <%= image_tag "028-cheese.png" %>
+           <p>Cheese</p>
+         </div>
+       </span>
+     </label>
+    </div>
 
-           <tr>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="budget_1">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <i class="fa fa-dollar"></i>
-                     <p><15</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="budget_2">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <div>
-                       <i class="fa fa-dollar"></i>
-                       <i class="fa fa-dollar"></i>
-                     </div>
-                     <p>15-25</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-             <td>
-               <label class="cb-container">
-                 <input type="checkbox" value="selected" name="budget_3">
-                 <span class="checkmark">
-                   <div class="checkmark-content">
-                     <div>
-                       <i class="fa fa-dollar"></i>
-                       <i class="fa fa-dollar"></i>
-                       <i class="fa fa-dollar"></i>
-                     </div>
-                     <p>25+</p>
-                   </div>
-                 </span>
-               </label>
-             </td>
-           </tr>
-         </table>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+       <input type="checkbox" value="selected" name="budget_1">
+       <span class="checkmark">
+         <div class="checkmark-content">
+           <i class="fa fa-dollar"></i>
+           <p><15</p>
+         </div>
+       </span>
+     </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+        <input type="checkbox" value="selected" name="budget_2">
+         <span class="checkmark">
+           <div class="checkmark-content">
+             <div>
+               <i class="fa fa-dollar"></i>
+               <i class="fa fa-dollar"></i>
+             </div>
+             <p>15-25</p>
+           </div>
+         </span>
+       </label>
+    </div>
+    <div class="col-xs-4 selection-btn">
+      <label class="cb-container">
+       <input type="checkbox" value="selected" name="budget_3">
+       <span class="checkmark">
+         <div class="checkmark-content">
+           <div>
+             <i class="fa fa-dollar"></i>
+             <i class="fa fa-dollar"></i>
+             <i class="fa fa-dollar"></i>
+           </div>
+           <p>25+</p>
+         </div>
+       </span>
+     </label>
+    </div>
 
-         <button type="submit" class="submit-btn" id="submit_btn">Find your wine!</button>
-       </form>
-      <!--  <p>Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a> from <a href="https://www.flaticon.com">flaticon.com</a></p>
-    -->
-     </div>
+    <button type="submit" class="submit-btn" id="submit_btn">Find your wine!</button>
+
+    </form>
   </div>
+    <!-- <h2 class="form-title">Find your wine</h2> -->
+   
 </div>
 </body>

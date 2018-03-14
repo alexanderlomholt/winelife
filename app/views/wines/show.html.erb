@@ -23,101 +23,100 @@
     <img src="<%= @wine.photo_url %>" alt="Bottle of <%= @wine.name %>">
   </div>
   <div class="description">
-    <h3><%= @wine.name %></h3>
-    <h4><%= @wine.country %></h4>
+    <h3 class="padding-left-top"><%= @wine.name %></h3>
+    <h4 class="padding-left-top"><%= @wine.country %></h4>
     <% if @wine.tasting_note %>
-      <p class="details-wine text-justify"><%= @wine.tasting_note %></p>
+      <p class="details-wine text-justify padding-left-top"><%= @wine.tasting_note %></p>
     <% else %>
-      <p class="details-wine text-justify">Tasting note unavailable</p>
+      <p class="details-wine text-justify padding-left-top">Tasting note unavailable</p>
     <% end %>
-    <p class="more-infos text-center"> MORE INFOS </p>
+      <p class="more-infos text-center"> MORE INFOS </p>
+      <div class="more-description display-none">
+      <div class="row color-variety">
+        <div class="col-xs-6">
+          <div class="color">
+            <div class="title-left"><h3>Colour</h3></div>
+            <div class="details">
+              <p class="icon-left"> <%= image_tag "bottle glass.png", height: 30 %> </p>
+              <p class="info"><%= @wine.colour %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="variety">
+            <div class="title-right"><h3>Variety</h3></div>
+            <div class="details">
+              <p class="icon-right"> <%= image_tag "grape-2.png", height: 30 %> </p>
+              <% if @wine.variety %>
+                <p class="info"><%= @wine.variety %></p>
+              <% else %>
+                <p class="info">Information unavailable</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row temperature-alcohol">
+        <div class="col-xs-6">
+          <div class="temperature">
+            <div class="title-left"><h3>Temperature</h3></div>
+            <div class="details">
+              <p class="icon-left"> <%= image_tag "Thermometre.png", height: 30 %> </p>
+              <% if @wine.serving_temperature %>
+                <p class="info"><%= @wine.serving_temperature %></p>
+              <% else %>
+                <p class="info">Information unavailable</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="degree">
+            <div class="title-right"><h3>Degree of alcohol</h3></div>
+            <div class="details">
+              <p class="icon-right"> <%= image_tag "percentage-2.png", height: 30 %> </p>
+              <p class="info"><%= @wine.alcohol_percent %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row food-pairing-rating">
+        <div class="col-xs-6">
+          <div class="food-pairing">
+            <div class="title-left"><h3>Food pairing</h3></div>
+            <div class="details">
+              <% if @wine.pairs_with_meat %>
+                <p class="icon-left"><%= image_tag "meat.png", height: 30 %></p>
+              <% end %>
+              <% if @wine.pairs_with_seafood %>
+                <p class="icon-left"><%= image_tag "fish.png", height: 30 %></p>
+              <% end %>
+              <% if @wine.pairs_with_cheese %>
+                <p class="icon-left"><%= image_tag "cheese.png", height: 30 %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="rating">
+            <div class="title-right"><h3>Vivino.com rating</h3></div>
+            <div class="details">
+              <p class="icon-right"> <%= image_tag "star-2.png", height: 30 %> </p>
+              <p class="info"><%= @wine.rating %></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 
-  <div class="more-description invisible">
-    <div class="row color-variety">
-      <div class="col-xs-6">
-        <div class="color">
-          <div class="title-left"><h3>Colour</h3></div>
-          <div class="details">
-            <p class="icon-left"> <%= image_tag "bottle glass.png", height: 30 %> </p>
-            <p class="info"><%= @wine.colour %></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="variety">
-          <div class="title-right"><h3>Variety</h3></div>
-          <div class="details">
-            <p class="icon-right"> <%= image_tag "grape-2.png", height: 30 %> </p>
-            <% if @wine.variety %>
-              <p class="info"><%= @wine.variety %></p>
-            <% else %>
-              <p class="info">Information unavailable</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row temperature-alcohol">
-      <div class="col-xs-6">
-        <div class="temperature">
-          <div class="title-left"><h3>Temperature</h3></div>
-          <div class="details">
-            <p class="icon-left"> <%= image_tag "Thermometre.png", height: 30 %> </p>
-            <% if @wine.serving_temperature %>
-              <p class="info"><%= @wine.serving_temperature %></p>
-            <% else %>
-              <p class="info">Information unavailable</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="degree">
-          <div class="title-right"><h3>Degree of alcohol</h3></div>
-          <div class="details">
-            <p class="icon-right"> <%= image_tag "percentage-2.png", height: 30 %> </p>
-            <p class="info"><%= @wine.alcohol_percent %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row food-pairing-rating">
-      <div class="col-xs-6">
-        <div class="food-pairing">
-          <div class="title-left"><h3>Food pairing</h3></div>
-          <div class="details">
-            <% if @wine.pairs_with_meat %>
-              <p class="icon-left"><%= image_tag "meat.png", height: 30 %></p>
-            <% end %>
-            <% if @wine.pairs_with_seafood %>
-              <p class="icon-left"><%= image_tag "fish.png", height: 30 %></p>
-            <% end %>
-            <% if @wine.pairs_with_cheese %>
-              <p class="icon-left"><%= image_tag "cheese.png", height: 30 %></p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="rating">
-          <div class="title-right"><h3>Vivino.com rating</h3></div>
-          <div class="details">
-            <p class="icon-right"> <%= image_tag "star-2.png", height: 30 %> </p>
-            <p class="info"><%= @wine.rating %></p>
-          </div>
-        </div>
-      </div>
 
-    </div>
-    <br>
-    <br>
-  </div>
 </div>
 
 
-
+<% content_for :after_js do %>
   <script>
     $( ".favorite").click(function() {
 
@@ -128,20 +127,22 @@
        // else
        //  $(".fa-heart").addClass( "is-clicked" );
      });
+
     $( ".more-infos").click(function() {
 
+      $(".more-description").toggleClass( "display-none" );
+      
 
-      $(".more-description").toggleClass( "invisible" );
 
-       if( $(".invisible").length )         // use this if you are using id to check
-         $(".more-infos").html( "MORE INFOS" );
+      if( $(".display-none").length )         // use this if you are using id to check
+        $(".more-infos").html( "MORE INFOS" );
        else
-
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height()}, 500);
          $(".more-infos").html( "LESS INFOS" );
      });
    </script>
 
-
+<% end %>
 
 
 
