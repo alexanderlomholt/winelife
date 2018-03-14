@@ -17,7 +17,7 @@ h2 {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), image-url('bg1.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }  
 
 .main-content {
