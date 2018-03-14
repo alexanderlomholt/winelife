@@ -32,9 +32,21 @@
       <% end %>
       <p class="more-infos text-center"> MORE INFOS </p>
     </div>
+  </div>
+  <div class="product-image">
+    <img src="<%= @wine.photo_url %>" alt="Bottle of <%= @wine.name %>">
+  </div>
+  <div class="description">
+    <h3 class="padding-left-top"><%= @wine.name %></h3>
+    <h4 class="padding-left-top"><%= @wine.country %></h4>
+    <% if @wine.tasting_note %>
+      <p class="details-wine text-justify padding-left-top"><%= @wine.tasting_note %></p>
+    <% else %>
+      <p class="details-wine text-justify padding-left-top">Tasting note unavailable</p>
+    <% end %>
+      <p class="more-infos text-center"> MORE INFOS </p>
+      <div class="more-description display-none">
 
-
-    <div class="more-description invisible">
       <div class="row color-variety">
         <div class="col-xs-6">
           <div class="color">
@@ -111,13 +123,16 @@
         </div>
 
       </div>
-      <br>
-      <br>
+
     </div>
   </div>
+
+
+
 </div>
 
 
+<% content_for :after_js do %>
 
 
   <script>
@@ -130,20 +145,22 @@
        // else
        //  $(".fa-heart").addClass( "is-clicked" );
      });
+
     $( ".more-infos").click(function() {
 
+      $(".more-description").toggleClass( "display-none" );
+      
 
-      $(".more-description").toggleClass( "invisible" );
 
-       if( $(".invisible").length )         // use this if you are using id to check
-         $(".more-infos").html( "MORE INFOS" );
+      if( $(".display-none").length )         // use this if you are using id to check
+        $(".more-infos").html( "MORE INFOS" );
        else
-
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height()}, 500);
          $(".more-infos").html( "LESS INFOS" );
      });
    </script>
 
-
+<% end %>
 
 
 

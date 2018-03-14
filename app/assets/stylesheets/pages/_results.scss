@@ -2,6 +2,7 @@ h1 {
   font-size: 2.2em;
   margin: 40px 0 30px 0;
   font-weight: lighter;
+  font-size: 36px;
 }
 
 .wrapper-results {
@@ -26,4 +27,11 @@ h1 {
   #map {
     height: 90vh;
   }
+}
+
+.col-xs-12 .col-sm-6 .col-lg-4 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+
 }

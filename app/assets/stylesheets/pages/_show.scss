@@ -12,6 +12,11 @@ ol {
   height: 40px;
 }
 
+.main-container{
+	//height: calc(  100vw - 100px);
+	//height: 100%
+}
+
 .back-btn {
   float: left;
   padding: 7px 11px 5px 40px;
@@ -54,7 +59,12 @@ ol {
   max-width: 100%;
 }
 
+.padding-left-top{
+	padding-left: 20px;
+	padding-top: 20px;
+}
 .description {
+
   background-color: #F6546A;
   color: white;
   padding-left: 20px;
@@ -75,6 +85,22 @@ ol {
 }
 
 .more-infos {
+<<<<<<< HEAD
+	padding-top: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: underline;
+	p {
+		font-size: 16px;
+	}
+}
+
+.more-description {
+	background-color: #F6546A;
+	color: white;
+	font-weight: 100;
+	font-size: 12px;
+=======
   padding-top: 45px;
   padding-bottom: 15px;
   font-size: 20px;
@@ -91,9 +117,13 @@ ol {
   color: white;
   font-weight: 100;
   font-size: 16px;
+>>>>>>> 0b90cfc205eecbe624b3c90e1c11fc6c991d3b4b
 
 }
 
+.display-none{
+	display: none;
+}
 .title {
   font-weight: 100;
   text-decoration: underline;
