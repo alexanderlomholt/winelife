@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   post "/", to: 'wines#search'
+  get "/likes", to: "wines#likes"
   get "/results", to: 'wines#results'
   get "/wine/:id", to: 'wines#show', as: 'show'
+  get "/wine/:id/like", to: 'wines#like', as: 'wine_like'
 end

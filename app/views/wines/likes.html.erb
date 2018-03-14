@@ -1,0 +1,27 @@
+<div class="wrapper-results">
+  <h1 class="list text-center">Wines You Liked</h1>
+  <p class="text-center">You can like/unlike bottles from this list by cliking on a wine and clicking the little heart</p>
+  <div class="container">
+    <div class="row">
+      <% Like.where(user: current_user).map do |like| %>
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+          <div class="winecard">
+            <div class="cardheader">
+              <div class="rating">
+                <p><i class="fa fa-star"></i> <%= like.wine.rating %></p>
+              </div>
+              <div class="price">
+                <p>$ <%= like.wine.price %></p>
+              </div>
+            </div>
+            <div class="imgbox">
+              <img src="<%= like.wine.photo_url %>" alt="winebottle">
+            </div>
+            <h3><%= like.wine.name.split[0..3].join(' ') %></h3>
+            <%= link_to "More details", show_path(like.wine), class: "main-btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
