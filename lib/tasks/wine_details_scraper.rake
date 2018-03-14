@@ -18,7 +18,7 @@ task :wine_details_scraper => :environment do
       p_content = elt.text.strip
       if p_content[0..7] == "Between:"
         puts "Serving temp"
-        p wine.serving_temperature = p_content.remove("\r\n         ").remove(":").capitalize
+        p wine.serving_temperature = p_content.remove("\r\n         ").remove(":").remove("Between").gsub("and", "-").strip
       elsif p_content.length > 60
         puts "Tasting note"
         p wine.tasting_note = p_content

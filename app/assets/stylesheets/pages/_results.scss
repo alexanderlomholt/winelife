@@ -19,13 +19,13 @@ h1 {
   height: 700px;
 }
 
-@media only screen and (max-width: 359px) {
-  .wrapper-results {
-    margin-bottom: 30px;
-  }
+@media only screen and (max-width: 599px) {
+  // .wrapper-results {
+  //   margin-bottom: 30px;
+  // }
 
   #map {
-    height: 480px;
+    height: 90vh;
   }
 }
 

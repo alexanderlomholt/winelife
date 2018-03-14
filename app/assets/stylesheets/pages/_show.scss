@@ -1,10 +1,15 @@
 
+ol {
+  float: left;
+  margin-left: 10px;
+}
+
 @-ms-viewport {
-	width: device-width;
+  width: device-width;
 }
 
 .header {
-	height: 40px;
+  height: 40px;
 }
 
 .main-container{
@@ -13,44 +18,42 @@
 }
 
 .back-btn {
-	float: left;
-	padding: 7px 11px 5px 40px;
-	cursor: pointer;
-
-
+  float: left;
+  padding: 7px 11px 5px 40px;
+  cursor: pointer;
 }
 
 .favorite {
-	float: right;
-	padding: 7px 40px 5px 7px;
-	cursor: pointer;
+  float: right;
+  padding: 7px 40px 5px 7px;
+  cursor: pointer;
 }
 
 .fa-arrow-left {
-	color: #F6546A;
+  color: #F6546A;
 }
 
 .fa-heart {
-	color: lightgrey;
+  color: lightgrey;
 
 }
 
 .icon-min-width {
-	min-width: 70px;
+  min-width: 70px;
 
 }
 .is-clicked {
-	color: #F6546A !important;
+  color: #F6546A !important;
 }
 
 .product-image {
-	margin: auto;
-	width: 150px;
-	padding-bottom: 40px;
+  margin: auto;
+  width: 150px;
+  padding-bottom: 40px;
 }
 
 .product-image img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .padding-left-top{
@@ -58,22 +61,28 @@
 	padding-top: 20px;
 }
 .description {
-	background-color: #F6546A;
-	color: white;
-	height:100%;
-	h4 {
-		font-weight: 100;
-		font-size: 16px;
-	}
 
-	p {
-		font-size: 12px;
-		font-weight: 100;
-	}
+  background-color: #F6546A;
+  color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  h4 {
+    font-weight: 100;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 100;
+    padding-right: 20px;
+
+  }
 
 }
 
 .more-infos {
+<<<<<<< HEAD
 	padding-top: 20px;
 	font-size: 16px;
 	cursor: pointer;
@@ -88,6 +97,24 @@
 	color: white;
 	font-weight: 100;
 	font-size: 12px;
+=======
+  padding-top: 45px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  p {
+    font-size: 20px;
+  }
+}
+
+.more-description {
+  background-color: #F6546A;
+  margin-top: -15px;
+  color: white;
+  font-weight: 100;
+  font-size: 16px;
+>>>>>>> 0b90cfc205eecbe624b3c90e1c11fc6c991d3b4b
 
 }
 
@@ -95,38 +122,38 @@
 	display: none;
 }
 .title {
-	font-weight: 100;
-	text-decoration: underline;
-	padding-bottom: 10px;
+  font-weight: 100;
+  text-decoration: underline;
+  padding-bottom: 10px;
 
 }
 
 .more-description .info-details  {
-	font-size: 12px;
+  font-size: 16px;
 
 }
 
 .icon-left {
-	padding-left: 20px;
+  padding-left: 20px;
 }
 .find {
-	font-size: 12px;
-	padding: 20px;
+  font-size: 16px;
+  padding: 20px;
 }
 
 .details {
-	display: flex;
+  display: flex;
 }
 
 .title-left {
-	padding-bottom: 10px;
-	padding-left: 20px;
-	text-decoration: underline;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  text-decoration: underline;
 }
 
 .title-right {
-	padding-bottom: 10px;
-	text-decoration: underline;
+  padding-bottom: 10px;
+  text-decoration: underline;
 
 }
 
@@ -136,15 +163,8 @@
     padding-left: 12px;
 }
 
-
-
-ol {
-	float: left;
-	margin-left: 10px;
-}
-
 .col-xs-6  h3 {
-	font-size: 16px;
-	font-weight: 500;
-	margin-top: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 17px;
 }
