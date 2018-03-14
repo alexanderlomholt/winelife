@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Winelife</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -17,5 +17,6 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_SERVER_KEY']}&callback=initMap" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
+    <%= yield :after_js %>
   </body>
 </html>
