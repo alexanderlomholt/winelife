@@ -25,6 +25,7 @@
   cursor: pointer;
 }
 
+
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
@@ -37,6 +38,9 @@
   align-items: center;
   justify-content: space-around;
   transition: 0.2s ease;
+  border-top: 0.1px solid #CECECE;
+  border-right: 0.1px solid #CECECE;
+
   img {
     transition: 0.2s ease;
     filter: invert(0%);
@@ -69,7 +73,7 @@
 /* When the checkbox is checked, add a blue background */
 .cb-container input:checked ~ .checkmark {
   //background-color: rgba(246,84,106,1.0);
-  background-color: #fab1a0;
+  background-color: #A0FAED;
   color: white;
   img {
     filter: invert(100%);

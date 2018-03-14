@@ -1,0 +1,69 @@
+
+td {
+  padding: 10px 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.height-100{
+  height: 100%;
+}
+
+
+.main-content {
+  background-color: transparent;
+  height: calc(100vh - 60px);
+  text-align: center;
+
+  h2 {
+    color: white;
+  }
+}
+
+
+.submit-btn-search {
+  background-color: #F6546A;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  color: white;
+}
+
+@media only screen and (max-width: 599px) {
+  td {
+    padding: 4px;
+  }
+
+  // .main-content {
+  //   //margin: 40px auto;
+  //   height: calc(100vh - 60px);
+  //   padding-right: 0px;
+  //   padding-left: 0px;
+  //   div form{
+  //     height: 100%;
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: space-between;
+  //   }
+  // }
+
+  /*I know I shouldn't override Bootstrap classes, but hey, at least it works without major problems.*/
+  .container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+// @media only screen and (max-width: 359px) {
+//   .main-content {
+//     margin: 10px auto;
+//   }
+
+//   .submit-btn {
+//     width: 290px;
+//   }
+
+// }
+
