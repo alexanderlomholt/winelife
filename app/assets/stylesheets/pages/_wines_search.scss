@@ -1,12 +1,3 @@
-
-td {
-  padding: 10px 10px;
-}
-
-h2 {
-  margin-top: 0;
-}
-
 .height-100{
   height: 100%;
 }
@@ -18,6 +9,7 @@ h2 {
   text-align: center;
 
   h2 {
+    margin-top: 0;
     color: white;
   }
 }
@@ -35,9 +27,6 @@ h2 {
 }
 
 @media only screen and (max-width: 599px) {
-  td {
-    padding: 4px;
-  }
 
   // .main-content {
   //   //margin: 40px auto;
