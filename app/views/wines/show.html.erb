@@ -16,27 +16,11 @@
         </a>
       </div>
       <div class="favorite">
-        <h2><i class="fas fa-heart"></i></h2>
+        <%= link_to wine_like_path(@wine) do %>
+          <h2><i class="fas fa-heart"></i></h2>
+        <% end %>
       </div>
     </div>
-    <div class="favorite">
-      <%= link_to wine_like_path(@wine) do %>
-        <h2><i class="fas fa-heart"></i></h2>
-      <% end %>
-    <div class="product-image">
-      <img src="<%= @wine.photo_url %>" alt="Bottle of <%= @wine.name %>">
-    </div>
-    <div class="description">
-      <h3><%= @wine.name %></h3>
-      <h4><%= @wine.country %></h4>
-      <% if @wine.tasting_note %>
-        <p class="details-wine text-justify"><%= @wine.tasting_note %></p>
-      <% else %>
-        <p class="details-wine text-justify">Tasting note unavailable</p>
-      <% end %>
-      <p class="more-infos text-center"> MORE INFOS </p>
-    </div>
-  </div>
   <div class="product-image">
     <img src="<%= @wine.photo_url %>" alt="Bottle of <%= @wine.name %>">
   </div>
@@ -153,7 +137,7 @@
     $( ".more-infos").click(function() {
 
       $(".more-description").toggleClass( "display-none" );
-      
+
 
 
       if( $(".display-none").length )         // use this if you are using id to check
