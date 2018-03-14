@@ -15,12 +15,12 @@
  font-weight: 500;
  font-size: 48px;
  color: white;
- margin: 375px 0px 0px 0px;
+ margin: 325px 0px 0px 0px;
 }
 
 
 .comment h3 {
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   font-weight: 500;
   margin-top: 10px;
@@ -37,7 +37,22 @@
     background-color: #F6546A;
     padding: 18px;
     border-radius: 4px;
-    width: 150px;
+    width: 90%;
+    margin: -20px auto 0px;
     border: none;
     color: white;
 }
+
+p {
+  font-size: 16px;
+  color: white;
+  font-weight: normal;
+}
+.sign-up-link {
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
