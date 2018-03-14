@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(version: 20180313205813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "saq_code"
+    t.integer "reviews_number"
     t.string "url"
     t.string "volume"
     t.string "country"
-    t.integer "reviews_number"
     t.string "tasting_note"
     t.string "serving_temperature"
     t.string "alcohol_percent"
