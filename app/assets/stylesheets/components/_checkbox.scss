@@ -67,13 +67,13 @@
 }
 
 .checkmark-content img {
-  height: 10vw;
+  height: 55px;
 }
 
 /* When the checkbox is checked, add a blue background */
 .cb-container input:checked ~ .checkmark {
   //background-color: rgba(246,84,106,1.0);
-  background-color: #A0FAED;
+  background-color: rgba(84,246,224,0.5);
   color: white;
   img {
     filter: invert(100%);
@@ -118,5 +118,5 @@
 
 
 .checkmark-content p {
-  font-size: 3vw;
+  font-size: 16px;
 }

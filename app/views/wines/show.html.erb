@@ -16,8 +16,12 @@
         </a>
       </div>
       <div class="favorite">
-        <%= link_to wine_like_path(@wine) do %>
-          <h2><i class="fas fa-heart"></i></h2>
+        <%= link_to wine_like_path(@wine), method: :post do %>
+          <% if Like.where(wine: @wine, user: current_user).empty? %>
+            <h2><i class="fas fa-heart"></i></h2>
+          <% else %>
+             <h2><i class="fas fa-heart is-clicked"></i></h2>
+          <% end %>
         <% end %>
       </div>
     </div>
