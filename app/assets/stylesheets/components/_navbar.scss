@@ -1,9 +1,8 @@
 /* Main navbar */
 .navbar-winelife {
-  /*box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 10px 10px 0 rgba(0,0,0,0.03);*/
   background: transparent;
   transition: all 0.3s ease;
-  height: 60px;
+  height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -33,7 +32,6 @@
 .navbar-winelife-item {
   cursor: pointer;
   padding: 0 20px;
-
 }
 
 /* Navbar link */
@@ -64,7 +62,6 @@
   color: rgba(246,84,106,1.0);
   text-decoration: none;
 }
-
 
 .navbar-wagon-link:hover {
   color: white!important;
