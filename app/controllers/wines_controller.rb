@@ -120,6 +120,15 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
   end
 
+  def like
+    @wine = Wine.find(params[:id])
+    Like.create(wine: @wine, user: current_user)
+    redirect_to show_path(@wine)
+  end
+
+  def likes
+  end
+
   private
 
   def location
