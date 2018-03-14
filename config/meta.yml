@@ -1,0 +1,5 @@
+meta_product_name: "Winelife"
+meta_title: "Winelife - your personal wine advisor"
+meta_description: "Winelife helps you choose the best-rated wines that suit your needs and are available at the nearest SAQ outlet."
+meta_image: "winecorks.jpeg"       # should exist in `app/assets/images/`
+twitter_account: "@winelife_mtl"   # required for Twitter Cards
