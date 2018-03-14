@@ -48,7 +48,7 @@ ol {
 
 .product-image {
   margin: auto;
-  width: 400px;
+  max-width: 400px;
   padding-bottom: 40px;
   display: flex;
   justify-content: space-around;
@@ -86,6 +86,7 @@ ol {
 
 .more-infos {
 	padding-top: 20px;
+  padding-right: 20px;
 	font-size: 16px;
 	cursor: pointer;
 	text-decoration: underline;
@@ -171,5 +172,19 @@ ol {
 @media only screen and (max-width: 399px) {
   .product-image {
     width: 150px;
+  }
+
+  .description {
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  p.info {
+    padding-right: 0px;
+    padding-left: 7px;
+  }
+
+  p.icon-right, p.icon-left {
+    padding-right: 0px;
   }
 }
