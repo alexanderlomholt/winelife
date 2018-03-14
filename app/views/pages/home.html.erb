@@ -7,9 +7,8 @@
       <h3> Your personal wine advisor</h3>
     </div>
     <div class="buttons">
-      <button type="submit" class="submit-btn-home" id="signup_btn">Sign up</button>
-
-      <button type="submit" class="submit-btn-home" id="signin_btn">Sign in</button>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "submit-btn-home" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "submit-btn-home"%>
     </div>
   </div>
 </body>
