@@ -123,12 +123,11 @@ class WinesController < ApplicationController
   def like
     @wine = Wine.find(params[:id])
     likes = Like.where(wine: @wine, user: current_user)
-    if likes.any?
-      likes.first.destroy
-    else
+    if likes.empty?
       Like.create(wine: @wine, user: current_user)
+    else
+      likes.first.destroy
     end
-    # redirect_to show_path(@wine)
   end
 
   def likes
