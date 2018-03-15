@@ -11,7 +11,7 @@ $font-size-base: 18px;
 
 // Colors
 $gray-base:       $gray;
-$brand-primary:   $blue;
+$brand-primary:   $white;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
@@ -24,5 +24,7 @@ $border-radius-small: 2px;
 
 // Override other variables below!
 
-// Overwrite default links
-$link-hover-decoration: none;
+$link-hover-decoration: none!important;
+$link-color: $brand-primary !default;
+$link-hover-color: none;
+
