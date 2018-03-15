@@ -1,4 +1,12 @@
- .background-image-form {
+	// .simple_form.new_user {
+	// 	padding: 40px;
+
+	// 	h2 {
+	// 		text-align: center;
+	// 	}
+	// }
+
+.background-image-form {
 	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('bottle_wine_form.jpg');
 	background-size: auto;
 	background-repeat: no-repeat;
@@ -6,6 +14,15 @@
 	min-height: 100vh;
 }
 
+
+
+.background-image-form-sign_up {
+	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('landing-3.jpg');
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
 .main-content-login {
 	padding-top: 85%;
 	font-size: 1.6rem;
@@ -16,14 +33,23 @@
 	}
 }
 
+.main-content-signup {
+	padding-top: 85%;
+	font-size: 1.6rem;
+	* {
+		padding: 6px;
+		font-family: Nunito;
+	}
+
+}
 .page__section {
-    width: 90%;
-    margin: 0 auto;
+	width: 90%;
+	margin: 0 auto;
 }
-.form-actions {
-	background-color: #F6546A;
-	border-radius: 3px;
-}
+// .form-actions {
+// 	background-color: #F6546A;
+// 	border-radius: 3px;
+// }
 
 .form {
 	padding: 40px;
@@ -38,53 +64,64 @@
 	// 	border: none;
 	// 	color: white;
 	// }
-h2 {
-	color: #323232;
+	h2 {
+		color: #323232;
 
-}
+	}
 
-.email {
-	color: #323232; 
-	padding: 5px;
-}
+	.email {
+		color: #323232; 
+		padding: 5px;
+	}
 
-.password {
-	color: #323232; 
-	padding: 5px;
-}
+	.password {
+		color: #323232; 
+		padding: 5px;
+	}
 
-.shared-links a  {
-	padding: 10px;
-	color: #323232;
-	text-decoration: none;
-	cursor: pointer;			
-}
+	.shared-links a  {
+		padding: 10px;
+		color: #323232;
+		text-decoration: none;
+		cursor: pointer;			
+	}
 
-.button-submit-form {
-	background-color: #F6546A;
-	padding: 12px;
-	border-radius: 4px;
-	width: 84%;
-	border: none;
-	color: white;
-	margin: 0 auto;
-	text-align: center;
-}
+	.button-submit-form {
+		background-color: #F6546A;
+		padding: 12px;
+		border-radius: 4px;
+		width: 84%;
+		border: none;
+		color: white;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.btn.btn-default {
+		background-color: #F6546A;
+		padding: 12px;
+		border-radius: 4px;
+		width: 84%;
+		border: none;
+		color: white;
+		margin: 0 auto;
+		text-align: center;
+	}
 
 
-#user_email {
-	border: none;
-	box-shadow: none;
-	border-bottom: 0.5px solid #CECECE;
-}
+	#user_email {
+		border: none;
+		box-shadow: none;
+		border-bottom: 0.5px solid #CECECE;
+	}
 
-#user_password {
-	background-color: none;
-	border: none;
-	box-shadow: none;
-	border-bottom: 0.5px solid #CECECE;
+	#user_password {
+		background-color: none;
+		border: none;
+		box-shadow: none;
+		border-bottom: 0.5px solid #CECECE;
 
-}
+	}
 
 
 /*
@@ -258,14 +295,14 @@ h2 {
 // 	overflow-y: scroll;
 // 	background-color: #a18cd1;
 
-	a{
-		text-decoration: none;
-		color: #fff;
-	}
+a{
+	text-decoration: none;
+	color: #fff;
+}
 
-	a:hover, a:focus{
-		text-decoration: underline;
-	}	
+a:hover, a:focus{
+	text-decoration: underline;
+}	
 // }
 
 
@@ -278,6 +315,5 @@ h2 {
 }
 
 .forgot-password {
-	cursor: pointer;
-
+	cursor: pointer;	
 }
