@@ -1,3 +1,4 @@
+
 .landing-content {
   text-align: center;
   p {
@@ -50,17 +51,22 @@
     background-color: #F6546A;
     padding: 18px;
     border-radius: 4px;
-    width: 90%;
-    margin: -20px auto 0px;
+    width: 92%;
+    margin: 0px auto;
     border: none;
     color: white;
 }
 
-.sign-up-link {
+
+.sign-up-link a {
+
   color: white;
-  text-decoration: underline;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.wine-lover p {
+  color: white;
 }
 

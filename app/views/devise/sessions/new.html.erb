@@ -1,15 +1,36 @@
-<h2>Log in</h2>
+<body class="background-image-form">
+	<div class="main-content-signup">
+		<form action="users/sign_in" method="post">
+			<div class="page__section">
+				<label class="field field_type2">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+					<input class="field__input" placeholder="e.g. email@gmail.com">
+					<span class="field__label-wrap">
+						<span class="field__label">Enter your email</span>
+					</span>
+				</label>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+				<label class="field field_type2">
+					<input class="field__input" type="password" placeholder="e.g. *******">
 
-<%= render "devise/shared/links" %>
+					<span class="field__label-wrap">
+						<span class="field__label">Enter your password</span>
+					</span>
+				</label>
+			</div>	
+			<div class="button-submit-form">
+				<%= link_to t(".sign_in", default: "LOG IN"), new_user_session_path, class: "submit-btn-home"%>
+			</div>
+		</form>
+ 
+		<div class="sign-up-link text-center">	
+			<%= link_to t(".sign_up", default: "CREATE AN ACCOUNT"), new_user_registration_path, class: "sign-up-link" %>
+		</div>
+
+		<div class="forgot-password text-center">
+			<%= link_to "Forgot your password?", new_password_path(resource_name) %>
+		</div>
+
+	</div>
+</body>
+

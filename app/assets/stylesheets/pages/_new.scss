@@ -1,0 +1,290 @@
+.background-image-form {
+	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('bottle_wine_form.jpg');
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.main-content-signup {
+	padding-top: 85%;
+	font-size: 1.6rem;
+
+	* {
+		padding: 6px;
+		font-family: Nunito;
+	}
+}
+
+.form-inputs {
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 3px;
+	margin: 220px 10px 10px 10px;
+}
+
+
+.page__section {
+    width: 90%;
+    margin: 0 auto;
+}
+.form-actions {
+	background-color: #F6546A;
+	border-radius: 3px;
+}
+
+.form {
+	padding: 40px;
+}
+
+	// .btn {
+	// 	background-color: #F6546A;
+	// 	padding: 6px;
+	// 	border-radius: 4px;
+	// 	width: 100%;
+	// 	margin: 0 auto;
+	// 	border: none;
+	// 	color: white;
+	// }
+h2 {
+	color: #323232;
+
+}
+
+.email {
+	color: #323232; 
+	padding: 5px;
+}
+
+.password {
+	color: #323232; 
+	padding: 5px;
+}
+
+.shared-links a  {
+	padding: 10px;
+	color: #323232;
+	text-decoration: none;
+	cursor: pointer;			
+}
+
+.button-submit-form {
+	background-color: #F6546A;
+	padding: 18px;
+	border-radius: 4px;
+	width: 84%;
+	border: none;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+#user_email {
+	border: none;
+	box-shadow: none;
+	border-bottom: 0.5px solid #CECECE;
+}
+
+#user_password {
+	background-color: none;
+	border: none;
+	box-shadow: none;
+	border-bottom: 0.5px solid #CECECE;
+
+}
+
+
+/*
+* field
+*/
+
+/* reset */
+
+.field{
+	--uiFieldPaddingTop: var(--fieldPaddingTop, 0px);
+	--uiFieldPaddingRight: var(--fieldPaddingRight, 0px);
+	--uiFieldPaddingBottom: var(--fieldPaddingBottom, 0px);
+	--uiFieldPaddingLeft: var(--fieldPaddingLeft, 0px);
+
+	--uiFieldBorderColor: var(--fieldBorderColor, transpatent);
+	--uiFieldBorderTop: var(--fieldBorderTop, 0px);
+	--uiFieldBorderRight: var(--fieldBorderRight, 0px);
+	--uiFieldBorderBottom: var(--fieldBorderBottom, 0px);
+	--uiFieldBorderLeft: var(--fieldBorderLeft, 0px);
+
+	--uiFieldBgColor: var(--fieldBgColor, transpatent);
+	--uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+	--uiFieldAnimationDuration: var(--fieldAnimationDuration, .3s);
+	--uiFieldFonstSize: var(--fieldFontSize, 16px);
+
+	position: relative;  
+	display: block;
+}
+
+.field__input{
+	width: 100%;
+	box-sizing: border-box;
+	background-color: var(--uiFieldBgColor);
+	font-family: Nunito;
+	font-size: 16px;
+
+  /* for iOS */
+  appearance: none;
+  border-radius: 0;
+
+  border-style: solid;
+  border-color: var(--uiFieldBorderColor);
+
+  border-top-width: var(--uiFieldBorderTop);
+  border-right-width: var(--uiFieldBorderRight);
+  border-bottom-width: var(--uiFieldBorderBottom);
+  border-left-width: var(--uiFieldBorderLeft);
+
+  padding-top: var(--uiFieldPaddingTop);
+  padding-right: var(--uiFieldPaddingRight);
+  padding-bottom: var(--uiFieldPaddingBottom);
+  // padding-left: var(--uiFieldPaddingLeft);
+
+  font-size: 100%;
+  color: inherit;
+}
+
+.field__input::-webkit-input-placeholder{ 
+	color: var(--uiFieldPlaceholderColor);
+	opacity: 0;
+}
+
+.field__input::-moz-placeholder{ 
+	color: var(--uiFieldPlaceholderColor);
+	opacity: 0;
+}
+
+.field__input:focus{
+	outline: none;  
+}
+
+.field__input:focus::-webkit-input-placeholder{ 
+	transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
+	opacity: 1;
+}
+
+.field__input:focus::-moz-placeholder{ 
+	transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
+	opacity: 1;
+}
+
+.field__label-wrap{
+	height: 100%;
+	display: block;
+}
+
+.field__label{
+	position: absolute;
+	top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
+	left: calc(0px + var(--uiFieldBorderLeft));
+
+	pointer-events: none;
+	font-size: 16px;
+
+	transition: top var(--uiFieldAnimationDuration) cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity var(--uiFieldAnimationDuration) ease-out;
+	will-change: top, opacity;
+}
+
+// .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
+//   opacity: 0;
+//   top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
+// }
+
+.field__input:focus ~ .field__label-wrap .field__label{
+	opacity: 1;
+	top: calc(-1 * calc(var(--uiFieldPaddingTop) + var(--uiFieldBorderTop) + 15px));
+}
+
+/* type 2 */
+
+.field_type2{
+	--uiFieldBorderBottom: var(--fieldBorderBottom, 2px);
+	--uiFieldPaddingTop: var(--fieldPaddingTop, 5px);
+	--uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+	--uiFieldPaddingBottom: var(--fieldPaddingBottom, 10px);
+	--uiFieldPaddingLeft: var(--fieldPaddingLeft, 40px);  
+}
+
+.field_type2 .field__label-wrap:after{
+	content: "";
+	width: 0;
+	height: var(--uiFieldBorderBottom);
+	background-color: var(--fieldBorderColorActive);
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	will-change: width;
+	transition: width var(--uiFieldAnimationDuration) ease-out;
+}
+
+.field_type2 .field__input:focus ~ .field__label-wrap:after{
+	width: 100%;
+}
+
+
+/*
+* demo styles
+*/
+
+.field{
+	--fieldBorderColor: rgba(250, 250, 250, 1);
+	--fieldPlaceholderColor: rgba(250, 250, 250, 0.4);
+	color: #fff;
+}
+
+/*
+* demo page
+*/
+
+// @media screen and (min-width: 768px){
+
+// 	html {
+// 		font-size: 62.5%;
+// 	}
+// }
+
+// @media screen and (max-width: 767px){
+
+// 	html {
+// 		font-size: 50%;
+// 	}
+// }
+
+// body {
+// 	font-size: 1.6rem;
+// 	color: #fff;
+// 	margin: 0;
+// 	-webkit-overflow-scrolling: touch;   
+// 	overflow-y: scroll;
+// 	background-color: #a18cd1;
+
+	a{
+		text-decoration: none;
+		color: #fff;
+	}
+
+	a:hover, a:focus{
+		text-decoration: underline;
+	}	
+// }
+
+
+
+.sign-up-link-form {
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.forgot-password {
+	cursor: pointer;
+
+}
