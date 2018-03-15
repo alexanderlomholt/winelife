@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   # root if new user or not logged in
   root to: 'pages#home'
 
+  get "404", to: 'errors#not_found', :via => :all
+  get "500", to: 'errors#internal_error', :via => :all
 end
 
