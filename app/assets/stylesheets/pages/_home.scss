@@ -1,9 +1,23 @@
-.background-image-home   {
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('landing-4.jpg');
+
+.landing-content {
+  text-align: center;
+  p {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+  }
+}
+
+.winelife h1, .comment h3, .wine-lover p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.background-image {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url('landing-4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-}  
+}
 
 .winelife {
   color: white;
@@ -45,6 +59,7 @@
 
 
 .sign-up-link a {
+
   color: white;
   font-size: 16px;
   font-weight: bold;

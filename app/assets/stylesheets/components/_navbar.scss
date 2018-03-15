@@ -1,9 +1,8 @@
 /* Main navbar */
 .navbar-winelife {
-  /*box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 10px 10px 0 rgba(0,0,0,0.03);*/
   background: transparent;
   transition: all 0.3s ease;
-  height: 60px;
+  height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -17,9 +16,11 @@
 
 /* User Avatar */
 .navbar-winelife .avatar {
-  height: 35px;
-  width: 35px;
+  padding-top: 3px;
+  height: 34px;
+  width: 34px;
   border-radius: 50%;
+  color: gray;
 }
 
 /* Right section */
@@ -33,7 +34,6 @@
 .navbar-winelife-item {
   cursor: pointer;
   padding: 0 20px;
-
 }
 
 /* Navbar link */
@@ -64,7 +64,6 @@
   color: rgba(246,84,106,1.0);
   text-decoration: none;
 }
-
 
 .navbar-wagon-link:hover {
   color: white!important;
@@ -101,3 +100,15 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+/* CUSTOM STYLES */
+.mobile-menu-heart {
+  color: #999999!important;
+}
+.mobile-menu-heart:hover {
+  color: #000000!important;
+}
+
+
+
+

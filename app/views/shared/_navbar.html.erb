@@ -1,6 +1,5 @@
 <div class="navbar-winelife">
   <!-- Logo -->
-  <!-- If page is home add white logo else add dark logo -->
   <%= link_to root_path, class: "navbar-winelife-brand" do %>
     <% if action_name == "home" || params[:controller] =~ /devise/ %>
       <p id="logo-white">//WINELIFE</p>
@@ -8,50 +7,58 @@
     <% else %>
       <p id="logo-dark">//WINELIFE</p>
     <% end %>
-  <% end %>
+
 
   <!-- Right Navigation -->
-  <div class="navbar-winelife-right hidden-xs hidden-sm">
+  <div class="navbar-winelife-right">
 
-    <% if user_signed_in? %>
-    <!-- Links when logged in -->
-    <%= link_to "Likes", likes_path, class: "navbar-winelife-item navbar-winelife-link" %>
+    <!-- Link to likes -->
+    <%= link_to "Likes", likes_path, class: "navbar-winelife-item navbar-winelife-link hidden-xs hidden-sm" %>
 
     <!-- Avatar with dropdown menu -->
-    <div class="navbar-winelife-item">
+    <div class="navbar-winelife-item hidden-xs hidden-sm">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewinelife.com/placeholder/users/Claire", class: "avatar dropdown-toggle", id: "navbar-winelife-menu", "data-toggle" => "dropdown" %>
+        <i class="fas fa-user-circle avatar dropdown-toggle" id="navbar-winelife-menu" data-toggle="dropdown"></i>
+
         <ul class="dropdown-menu dropdown-menu-right navbar-winelife-dropdown-menu">
           <li>
             <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-edit"></i> <%= t( "Edit user") %>
+              <i class="fa fa-edit"></i> <%= t( "Edit user") %>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+              <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>
         </ul>
+      </div>
     </div>
-  </div>
-  <!-- Login link (when logged out) -->
-  <%else %>
-    <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-2", id: "signup-link" %>
 
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-winelife-item navbar-winelife-link navbar-winelife-item-1", id: "login-link" %>
+  </div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-winelife-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-winelife-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li>
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-edit"></i> <%= t( "Edit user") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i> <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to likes_path do %>
+            <i class="fa fa-heart mobile-menu-heart" id=""></i> <%= t( "Likes") %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
-  <% end %>
-</div>
+
 </div>
