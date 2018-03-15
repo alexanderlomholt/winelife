@@ -8,7 +8,14 @@
           <div class="winecard">
             <div class="cardheader">
               <div class="rating">
-                <p><i class="fa fa-star"></i> <%= wine.rating %></p>
+                <p>
+                  <i class="fa fa-star"></i>
+                  <% if wine.rating %>
+                    <%= wine.rating %>
+                  <% else %>
+                    N/A
+                  <% end %>
+                </p>
               </div>
               <div class="price">
                 <p>$ <%= wine.price %></p>
@@ -17,8 +24,12 @@
             <div class="imgbox">
               <img src="<%= wine.photo_url %>" alt="winebottle">
             </div>
-            <h3><%= wine.name.split[0..3].join(' ') %></h3>
-            <p class="availability-text"> <%= @wine_availability[counter] %>
+            <% if wine.name.length > 35 %>
+              <h3><%= wine.name[0..32] %>...</h3>
+            <% else %>
+              <h3><%= wine.name %></h3>
+            <% end %>
+            <p class="availability-text"> <strong><%= @wine_availability[counter] %></strong>
               <% if @wine_availability[counter] > 1 %>
                 bottles
               <% else %>
@@ -33,7 +44,7 @@
       <% counter += 1 %>
     	<% end %>
     </div>
-    <br>
+    <h1 class="list text-center">Directions</h1>
     <div id="map"></div>
   </div>
 </div>
