@@ -1,13 +1,8 @@
 <div class="navbar-winelife">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-winelife-brand" do %>
-    <% if action_name == "home" || params[:controller] =~ /devise/ %>
-      <p id="logo-white">//WINELIFE</p>
-    <!-- <%= image_tag "Wine-Logo-Design.png", height: 80 %>  -->
-    <% else %>
-      <p id="logo-dark">//WINELIFE</p>
-    <% end %>
-  <%end%>
+    <p id="logo-dark">//WINELIFE</p>
+  <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-winelife-right">
