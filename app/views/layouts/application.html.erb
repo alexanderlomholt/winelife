@@ -25,9 +25,10 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= favicon_link_tag %>
   </head>
   <body>
-    <% if action_name != "home" %>
+    <% if controller_name == "wines" || controller_name == "errors" %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= yield %>
