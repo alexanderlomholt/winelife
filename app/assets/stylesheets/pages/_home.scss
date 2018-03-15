@@ -1,6 +1,9 @@
 
 .landing-content {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   p {
     font-size: 16px;
     color: white;
@@ -23,21 +26,19 @@
   color: white;
   text-decoration: none;
   padding: 0;
+  h3 {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  margin-top: 10px;
+}
 }
 
 .winelife h1 {
  font-weight: 500;
  font-size: 48px;
  color: white;
- margin: 325px 0px 0px 0px;
-}
-
-
-.comment h3 {
-  font-size: 20px;
-  color: white;
-  font-weight: 500;
-  margin-top: 10px;
+ margin:0;
 }
 
 .buttons {
@@ -64,9 +65,25 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  text-decoration:underline;
 }
 
 .wine-lover p {
   color: white;
+  margin: 0;
+  font-size: 12px;
+}
+
+.home-btn-wrapper{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  p {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+  }
 }
 

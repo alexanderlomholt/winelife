@@ -1,24 +1,23 @@
 
- <body class="background-image">
-  <div class="container landing-content">
+<div class="background-image">
+<div class="container">
+  <div class="landing-content">
     <div class="winelife text-center">
       <h1> //WINELIFE</h1>
-    </div>
-    <div class="comment text-center">
       <h3> YOUR PERSONAL WINE ADVISOR</h3>
     </div>
+  </div>
+  <div class="home-btn-wrapper">
     <div class="buttons ">
       <%= link_to t(".sign_in", default: "LOG IN"), new_user_session_path, class: "submit-btn-home"%>
-
     </div>
     <div class="wine-lover">
       <p> New Wine Lover? </p>
-
     </div>
     <div class="sign-up-link-form">
       <%= link_to t(".sign_up", default: "CREATE AN ACCOUNT"), new_user_registration_path, class: "sign-up-link" %>
-
     </div>
-
   </div>
-</body>
+</div>
+
+</div>

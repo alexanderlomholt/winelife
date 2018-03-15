@@ -1,23 +1,81 @@
-<body class="background-image-form-sign_up">
-<div class="main-content-signup">
-	
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<body class="background-image-form">
+	<div class="main-content-login">	
+		<form action="/users" method="post">
+			  <div class="form-inputs">
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+			<div class="page__section">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+				<label class="field field_type2">
 
+					<input class="field__input" name="user[email]" placeholder="e.g. email@gmail.com">
+					<span class="field__label-wrap">
+						<span class="field__label">Enter your email</span>
+					</span>
+				</label>
 
-<%= render "devise/shared/links" %>
+				<label class="field field_type2">
+					<input class="field__input" name="user[password]" type="password" placeholder="e.g. *******">
 
-</div>
+					<span class="field__label-wrap">
+						<span class="field__label">Enter your password</span>
+					</span>
+				</label>
+			</div>	
+		</div>
+				<div class="button-submit-form">
+					<input type="submit" name="" class="submit-btn-home" >
+				</div>
+		</form>
 
+		<div class="sign-up-link text-center">	
+			<%= link_to t("Log in", default: "LOG IN"), new_session_path(resource_name), class: "sign-in-link" %>
+		</div>
+
+	</div>
 </body>
+
+
+
+<!-- <div class="background-image-form-sign_up">
+	<div class="main-content-signup">
+		<form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="GFrDuGJo6CJq+JE65iLPosN1pgVlOaY/46SmsEYs7wUB1s7vaFptd2fApYNgbcZ2TACVa4upb+98qxRS4CcbNg==">
+
+
+			<div class="form-inputs">
+				<div class="page__section">
+					<div class="form-group email required user_email">
+
+						<label class="control-label email required field field_type2" for="user_email">
+							<input class="form-control string email required field__input" autofocus="autofocus" required="required" aria-required="true" type="email" value="" name="user[email]" id="user_email" placeholder="email@mail.com">
+							<span class="field__label-wrap">
+								<span class="field__label">Enter your email</span>
+							</span>
+						</div>
+
+						<div class="form-group password required user_password">
+
+							<label class="control-label password required field field_type2" for="user_password">
+								<input class="form-control password required field__input" required="required" aria-required="true" type="password" name="user[password]" id="user_password" placeholder="6 characters minimum">
+								<span class="field__label-wrap">
+									<span class="field__label">Enter your password</span>
+								</span>
+
+								<p class="help-block">6 characters minimum</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="action-signup">
+
+						<div class="form-actions">
+							<input type="submit" name="commit" value="Sign up" class="submit-btn-home" data-disable-with="Sign up">
+						</div>
+
+						<%= render "devise/shared/links" %>
+
+					</div>
+				</div>
+			</form>
+
+		</body>
+ -->
