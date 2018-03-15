@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:home]
+  # need this for user signed in redirect in routes.rb
+  skip_before_action :authenticate_user!, raise: false, only: [:home]
 
   def home
   end
