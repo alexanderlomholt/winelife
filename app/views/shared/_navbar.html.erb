@@ -7,8 +7,7 @@
     <% else %>
       <p id="logo-dark">//WINELIFE</p>
     <% end %>
-    <%end%>
-
+  <%end%>
 
   <!-- Right Navigation -->
   <div class="navbar-winelife-right">
@@ -19,7 +18,7 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-winelife-item hidden-xs hidden-sm">
       <div class="dropdown">
-        <i class="fas fa-user-circle avatar dropdown-toggle" id="navbar-winelife-menu" data-toggle="dropdown"></i>
+        <i class="fa fa-user-circle-o avatar dropdown-toggle" id="navbar-winelife-menu" data-toggle="dropdown"></i>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-winelife-dropdown-menu">
           <li>
@@ -29,7 +28,7 @@
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Sign out") %>
             <% end %>
           </li>
         </ul>
@@ -50,12 +49,12 @@
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i> <%= t(".sign_out", default: "Log out") %>
+            <i class="fa fa-sign-out"></i> <%= t(".sign_out", default: "Sign out") %>
           <% end %>
         </li>
         <li>
           <%= link_to likes_path do %>
-            <i class="fa fa-heart mobile-menu-heart" id=""></i> <%= t( "Likes") %>
+            <i class="fa fa-heart mobile-menu-heart" id=""></i> <%= t( "Likes" ) %>
           <% end %>
         </li>
       </ul>
