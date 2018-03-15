@@ -16,9 +16,11 @@
 
 /* User Avatar */
 .navbar-winelife .avatar {
-  height: 35px;
-  width: 35px;
+  padding-top: 3px;
+  height: 34px;
+  width: 34px;
   border-radius: 50%;
+  color: gray;
 }
 
 /* Right section */
@@ -98,3 +100,15 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+/* CUSTOM STYLES */
+.mobile-menu-heart {
+  color: #999999!important;
+}
+.mobile-menu-heart:hover {
+  color: #000000!important;
+}
+
+
+
+
