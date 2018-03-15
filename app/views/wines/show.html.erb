@@ -101,6 +101,9 @@
               <% if @wine.pairs_with_cheese %>
                 <p class="icon-left"><%= image_tag "cheese.png", height: 30 %></p>
               <% end %>
+              <% if (!@wine.pairs_with_meat && !@wine.pairs_with_seafood && !@wine.pairs_with_cheese) %>
+                <p class="info">Information unavailable</p>
+              <% end %>
             </div>
           </div>
         </div>
@@ -109,7 +112,13 @@
             <div class="title-right"><h3>Vivino.com rating</h3></div>
             <div class="details">
               <p class="icon-right"> <%= image_tag "star-2.png", height: 30 %> </p>
-              <p class="info"><%= @wine.rating %></p>
+              <p class="info">
+                <% if @wine.rating %>
+                  <%= @wine.rating %>
+                <% else %>
+                  Information unavailable
+                <% end %>
+              </p>
             </div>
           </div>
         </div>
