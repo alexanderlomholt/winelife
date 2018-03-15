@@ -67,8 +67,9 @@ ol {
 
   background-color: #F6546A;
   color: white;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 
   h4 {
     font-weight: 100;
@@ -100,6 +101,8 @@ ol {
 	color: white;
 	font-weight: 100;
 	font-size: 12px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .display-none{
@@ -156,11 +159,6 @@ ol {
 @media only screen and (max-width: 399px) {
   .product-image {
     width: 150px;
-  }
-
-  .description {
-    padding-left: 0px;
-    padding-top: 0px;
   }
 
   p.info {

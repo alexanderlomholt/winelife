@@ -15,6 +15,17 @@ h1 {
   font-size: 0.8em;
 }
 
+.no-h-margin {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.no-h-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 100vw;
+}
+
 #map {
   height: 700px;
 }
