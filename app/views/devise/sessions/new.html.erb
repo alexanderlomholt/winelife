@@ -1,7 +1,10 @@
 <body class="background-image-form">
 	<div class="main-content-signup">
-		<form action="users/sign_in" method="post">
+		<form action="/users/sign_in" method="post">
+			  <div class="form-inputs">
+
 			<div class="page__section">
+
 				<label class="field field_type2">
 
 					<input class="field__input" placeholder="e.g. email@gmail.com">
@@ -18,13 +21,15 @@
 					</span>
 				</label>
 			</div>	
-			<div class="button-submit-form">
-				<%= link_to t(".sign_in", default: "LOG IN"), new_user_session_path, class: "submit-btn-home"%>
-			</div>
+		</div>
+				<div class="button-submit-form">
+					<input type="submit" name="" class="submit-btn-home" >
+				</div>
+
 		</form>
- 
+
 		<div class="sign-up-link text-center">	
-			<%= link_to t(".sign_up", default: "CREATE AN ACCOUNT"), new_user_registration_path, class: "sign-up-link" %>
+			<%= link_to t("Sign_up", default: "CREATE AN ACCOUNT"), new_user_registration_path, class: "sign-up-link" %>
 		</div>
 
 		<div class="forgot-password text-center">
