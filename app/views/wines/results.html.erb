@@ -22,37 +22,40 @@
               </div>
             </div>
             <div class="imgbox">
-              <img src="<%= wine.photo_url %>" alt="winebottle">
+             <img src="<%= wine.photo_url %>" alt="Bottle of <%= wine.name %>">
             </div>
             <% if wine.name.length > 35 %>
               <h3><%= wine.name[0..32] %>...</h3>
             <% else %>
               <h3><%= wine.name %></h3>
             <% end %>
-            <p class="availability-text"> <strong><%= @wine_availability[counter] %></strong>
-              <% if @wine_availability[counter] > 1 %>
-                bottles
-              <% else %>
-                bottle
-              <% end %>
-              available at<br>
-              <%= @store.banner %> <%= @store.name %>
+            <p class="availability-text"><strong><%= @wine_availability[counter] %></strong>
+            <% if @wine_availability[counter] > 1 %>
+            bottles
+            <% else %>
+            bottle
+            <% end %>
+            available at<br>
+            <%= @store.banner %> <%= @store.name %>
             </p>
             <%= link_to "More details", show_path(wine), class: "main-btn" %>
           </div>
-    		</div>
-      <% counter += 1 %>
-    	<% end %>
+        </div>
+        <% counter += 1 %>
+      <% end %>
+
     </div>
     <h1 class="list text-center">Directions</h1>
     <div id="map"></div>
+
   </div>
 </div>
 
 <% content_for(:after_js) do %>
-  <script>
 
-    document.addEventListener("DOMContentLoaded", function() {
+ <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
 
       function buildMap() {
         handler = Gmaps.build('Google');
@@ -67,7 +70,6 @@
 
       buildMap();
 
-
       function displayOnMap(position){
         const userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         calcRoute(userLocation);
@@ -80,9 +82,9 @@
         var destination = new google.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>);
 
         var request = {
-            origin:      userLocation,
-            destination: destination,
-            travelMode:  google.maps.TravelMode.WALKING
+          origin:      userLocation,
+          destination: destination,
+          travelMode:  google.maps.TravelMode.WALKING
         };
         directionsService.route(request, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
@@ -90,7 +92,6 @@
           }
         });
       }
-
 
     });
   </script>
