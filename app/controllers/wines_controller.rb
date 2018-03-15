@@ -96,7 +96,7 @@ class WinesController < ApplicationController
       break if @wines.count == 6 || (@wines.count >= 2 && elapsed_time > 10.00) || (@wines.count >= 1 && elapsed_time > 15.00) || elapsed_time > 20.00
     end
 
-    @markers =
+    @marker =
       [{
         lat: @store.latitude,
         lng: @store.longitude#,
