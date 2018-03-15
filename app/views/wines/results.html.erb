@@ -21,10 +21,9 @@
                 <p>$ <%= wine.price %></p>
               </div>
             </div>
-            <div class="price">
-              <p>$ <%= wine.price %></p>
+            <div class="imgbox">
+              <img src="<%= wine.photo_url %>" alt="winebottle">
             </div>
-
             <% if wine.name.length > 35 %>
               <h3><%= wine.name[0..32] %>...</h3>
             <% else %>
@@ -41,52 +40,32 @@
             </p>
             <%= link_to "More details", show_path(wine), class: "main-btn" %>
           </div>
-          <div class="imgbox">
-           <img src="<%= wine.photo_url %>" alt="winebottle">
-           
-         </div>
-         <h3><%= wine.name.split[0..3].join(' ') %></h3>
-         <p class="availability-text"> <%= @wine_availability[counter] %>
-          <% if @wine_availability[counter] > 1 %>
-          bottles
-          <% else %>
-          bottle
-          <% end %>
-          available at<br>
-          <%= @store.banner %> <%= @store.name %>
-        </p>
-        <%= link_to "More details", show_path(wine), class: "main-btn" %>
-      </div>
+    		</div>
+      <% counter += 1 %>
+    	<% end %>
     </div>
-    <% counter += 1 %>
-    <% end %>
-
-    
+    <h1 class="list text-center">Directions</h1>
+    <div id="map"></div>
   </div>
-  <h1 class="list text-center">Directions</h1>
-  <div id="map"></div>
-  
-</div>
 </div>
 
 <% content_for(:after_js) do %>
+  <script>
 
- <script>
+    document.addEventListener("DOMContentLoaded", function() {
 
-  document.addEventListener("DOMContentLoaded", function() {
+      function buildMap() {
+        handler = Gmaps.build('Google');
+        handler.buildMap({provider: { scrollwheel: false }, internal: { id: 'map' } }, function(){
+          handler.fitMapToBounds();
+          if(navigator.geolocation)
+            navigator.geolocation.getCurrentPosition(displayOnMap);
 
-    function buildMap() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({provider: { scrollwheel: false }, internal: { id: 'map' } }, function(){
-        handler.fitMapToBounds();
-        if(navigator.geolocation)
-          navigator.geolocation.getCurrentPosition(displayOnMap);
+          directionsDisplay.setMap(handler.getMap());
+        });
+      }
 
-        directionsDisplay.setMap(handler.getMap());
-      });
-    }
-
-    buildMap();
+      buildMap();
 
 
       function displayOnMap(position){
@@ -94,30 +73,25 @@
         calcRoute(userLocation);
       };
 
-    function displayOnMap(position){
-      const userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      calcRoute(userLocation);
-    };
-    
-    var directionsDisplay = new google.maps.DirectionsRenderer();
-    var directionsService = new google.maps.DirectionsService();
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      var directionsService = new google.maps.DirectionsService();
 
-    function calcRoute(userLocation) {
-      var destination = new google.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>);
+      function calcRoute(userLocation) {
+        var destination = new google.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>);
 
-      var request = {
-        origin:      userLocation,
-        destination: destination,
-        travelMode:  google.maps.TravelMode.WALKING
-      };
-      directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        }
-      });
-    }
+        var request = {
+            origin:      userLocation,
+            destination: destination,
+            travelMode:  google.maps.TravelMode.WALKING
+        };
+        directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+          }
+        });
+      }
 
 
-  });
-</script>
+    });
+  </script>
 <% end %>
