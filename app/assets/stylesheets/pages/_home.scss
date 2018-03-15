@@ -1,4 +1,4 @@
-.background-image {
+.background-image-home   {
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('landing-4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,20 +37,15 @@
     background-color: #F6546A;
     padding: 18px;
     border-radius: 4px;
-    width: 90%;
-    margin: -20px auto 0px;
+    width: 92%;
+    margin: auto 0px;
     border: none;
     color: white;
 }
 
-p {
-  font-size: 16px;
+
+.sign-up-link a {
   color: white;
-  font-weight: normal;
-}
-.sign-up-link {
-  color: white;
-  text-decoration: underline;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;

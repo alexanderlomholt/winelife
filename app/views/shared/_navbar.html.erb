@@ -2,7 +2,7 @@
   <!-- Logo -->
   <!-- If page is home add white logo else add dark logo -->
   <%= link_to root_path, class: "navbar-winelife-brand" do %>
-    <% if action_name == "home" %>
+    <% if action_name == "home" || params[:controller] =~ /devise/ %>
       <p id="logo-white">//WINELIFE</p>
     <!-- <%= image_tag "Wine-Logo-Design.png", height: 80 %>  -->
     <% else %>
