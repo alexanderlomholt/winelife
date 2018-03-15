@@ -39,3 +39,10 @@ h1 {
     height: 90vh;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .no-h-margin {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
