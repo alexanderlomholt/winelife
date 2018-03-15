@@ -16,6 +16,7 @@
 
 	.main-content-login {
 		font-size: 1.6rem;
+		margin-top: 50px;
 		display: flex;
 		flex-direction: column;
 		height: calc(100vh - 70px);
@@ -27,7 +28,7 @@
 
 		h3 {
 			color: white;
-			font-size: 24px;
+			font-size: 28px;
 		}
 	}
 
@@ -85,7 +86,7 @@
 		background-color: #F6546A;
 		padding: 4px;
 		border-radius: 4px;
-		width: 84%;
+		width: 82%;
 		border: none;
 		color: white;
 		margin: 0 auto;
