@@ -17,7 +17,7 @@
             <div class="imgbox">
               <img src="<%= like.wine.photo_url %>" alt="winebottle">
             </div>
-            <h3><%= like.wine.name.split[0..3].join(' ') %></h3>
+            <h3><%= like.wine.name %></h3>
             <%= link_to "More details", show_path(like.wine), class: "main-btn" %>
           </div>
         </div>

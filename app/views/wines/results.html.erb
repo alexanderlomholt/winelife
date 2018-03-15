@@ -4,15 +4,42 @@
     <div class="row">
       <% counter = 0 %>
       <% @wines.each do |wine| %>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="winecard">
-          <div class="cardheader">
-            <div class="rating">
-              <p><i class="fa fa-star"></i> <%= wine.rating %></p>
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+          <div class="winecard">
+            <div class="cardheader">
+              <div class="rating">
+                <p>
+                  <i class="fa fa-star"></i>
+                  <% if wine.rating %>
+                    <%= wine.rating %>
+                  <% else %>
+                    N/A
+                  <% end %>
+                </p>
+              </div>
+              <div class="price">
+                <p>$ <%= wine.price %></p>
+              </div>
             </div>
             <div class="price">
               <p>$ <%= wine.price %></p>
             </div>
+
+            <% if wine.name.length > 35 %>
+              <h3><%= wine.name[0..32] %>...</h3>
+            <% else %>
+              <h3><%= wine.name %></h3>
+            <% end %>
+            <p class="availability-text"> <strong><%= @wine_availability[counter] %></strong>
+              <% if @wine_availability[counter] > 1 %>
+                bottles
+              <% else %>
+                bottle
+              <% end %>
+              available at<br>
+              <%= @store.banner %> <%= @store.name %>
+            </p>
+            <%= link_to "More details", show_path(wine), class: "main-btn" %>
           </div>
           <div class="imgbox">
            <img src="<%= wine.photo_url %>" alt="winebottle">
@@ -33,14 +60,18 @@
     </div>
     <% counter += 1 %>
     <% end %>
+
+    
   </div>
-  <br>
+  <h1 class="list text-center">Directions</h1>
   <div id="map"></div>
+  
 </div>
 </div>
 
 <% content_for(:after_js) do %>
-<script>
+
+ <script>
 
   document.addEventListener("DOMContentLoaded", function() {
 
@@ -58,11 +89,16 @@
     buildMap();
 
 
+      function displayOnMap(position){
+        const userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        calcRoute(userLocation);
+      };
+
     function displayOnMap(position){
       const userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       calcRoute(userLocation);
     };
-
+    
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var directionsService = new google.maps.DirectionsService();
 
