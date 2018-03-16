@@ -1,10 +1,10 @@
-	// .simple_form.new_user {
+	/*// .simple_form.new_user {
 	// 	padding: 40px;
 
 	// 	h2 {
 	// 		text-align: center;
 	// 	}
-	// }
+	// }*/
 
 	.background-image-form {
 		background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('bottle_wine_form.jpg');
@@ -26,7 +26,7 @@
 		font-size: 1.6rem;
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 70px);
+		height: 100vh;
 		justify-content: flex-end;
 		* {
 			padding: 6px;
@@ -38,7 +38,7 @@
 		font-size: 1.6rem;
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 70px);
+		height: 100vh;
 		justify-content: flex-end;
 		* {
 			padding: 6px;
@@ -104,12 +104,12 @@
 	}
 
 	.email {
-		color: #323232; 
+		color: #323232;
 		padding: 5px;
 	}
 
 	.password {
-		color: #323232; 
+		color: #323232;
 		padding: 5px;
 	}
 
@@ -117,7 +117,7 @@
 		padding: 10px;
 		color: #323232;
 		text-decoration: none;
-		cursor: pointer;			
+		cursor: pointer;
 	}
 
 	.button-submit-form {
@@ -207,7 +207,7 @@
 	--uiFieldAnimationDuration: var(--fieldAnimationDuration, .3s);
 	--uiFieldFonstSize: var(--fieldFontSize, 16px);
 
-	position: relative;  
+	position: relative;
 	display: block;
 }
 
@@ -239,26 +239,26 @@
   color: inherit;
 }
 
-.field__input::-webkit-input-placeholder{ 
+.field__input::-webkit-input-placeholder{
 	color: var(--uiFieldPlaceholderColor);
 	opacity: 0;
 }
 
-.field__input::-moz-placeholder{ 
+.field__input::-moz-placeholder{
 	color: var(--uiFieldPlaceholderColor);
 	opacity: 0;
 }
 
 .field__input:focus{
-	outline: none;  
+	outline: none;
 }
 
-.field__input:focus::-webkit-input-placeholder{ 
+.field__input:focus::-webkit-input-placeholder{
 	transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
 	opacity: 1;
 }
 
-.field__input:focus::-moz-placeholder{ 
+.field__input:focus::-moz-placeholder{
 	transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
 	opacity: 1;
 }
@@ -297,7 +297,7 @@
 	--uiFieldPaddingTop: var(--fieldPaddingTop, 5px);
 	--uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
 	--uiFieldPaddingBottom: var(--fieldPaddingBottom, 10px);
-	--uiFieldPaddingLeft: var(--fieldPaddingLeft, 40px);  
+	--uiFieldPaddingLeft: var(--fieldPaddingLeft, 40px);
 }
 
 .field_type2 .field__label-wrap:after{
@@ -351,7 +351,7 @@
 // 	font-size: 1.6rem;
 // 	color: #fff;
 // 	margin: 0;
-// 	-webkit-overflow-scrolling: touch;   
+// 	-webkit-overflow-scrolling: touch;
 // 	overflow-y: scroll;
 // 	background-color: #a18cd1;
 
@@ -362,7 +362,7 @@ a{
 
 a:hover, a:focus{
 	text-decoration: underline;
-}	
+}
 // }
 
 
@@ -375,10 +375,10 @@ a:hover, a:focus{
 }
 
 .forgot-password {
-	cursor: pointer;	
+	cursor: pointer;
 }
 
-.form-btn-wrapper{	
+.form-btn-wrapper{
 	position: absolute;
 	bottom: 10px;
 	left: 0;
