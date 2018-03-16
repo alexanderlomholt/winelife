@@ -1,6 +1,11 @@
 <div class="wrapper-results">
-  <h1 class="list text-center">Your wine suggestions</h1>
+  <!-- <h1 class="list text-center">Your wine suggestions</h1> -->
   <div class="container">
+    <div id="address" class="no-h-margin">
+      <h4><%= @store.banner %> <%= @store.name %></h4>
+      <p><%= @store.address %></p>
+      <p><i class="fa fa-phone"></i> <%= @store.phone_number %></p>
+    </div>
     <div class="row no-h-margin">
       <% counter = 0 %>
       <% @wines.each do |wine| %>
@@ -47,11 +52,6 @@
     </div>
     <h1 class="list text-center">Directions</h1>
     <div id="map"></div>
-    <div id="address" class="no-h-margin">
-      <h4><%= @store.banner %> <%= @store.name %></h4>
-      <p><%= @store.address %></p>
-      <h4><i class="fa fa-phone"></i> <%= @store.phone_number %></h4>
-    </div>
   </div>
 </div>
 
