@@ -32,6 +32,7 @@
       <%= render 'shared/navbar' %>
     <% end %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <%= javascript_include_tag 'application' %>
