@@ -30,6 +30,21 @@ h1 {
   height: 700px;
 }
 
+#address {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: lighter;
+  >* {
+    margin: 7px 0;
+  }
+  h4 {
+    font-size: 1.0em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+}
+
 @media only screen and (max-width: 599px) {
   // .wrapper-results {
   //   margin-bottom: 30px;
