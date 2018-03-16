@@ -47,13 +47,57 @@
     </div>
     <h1 class="list text-center">Directions</h1>
     <div id="map"></div>
-    <div class="no-h-margin">
+    <div id="address" class="no-h-margin">
       <h4><%= @store.banner %> <%= @store.name %></h4>
       <p><%= @store.address %></p>
-      <h4><%= @store.phone_number %></h4>
+      <h4><i class="fa fa-phone"></i> <%= @store.phone_number %></h4>
     </div>
   </div>
 </div>
+
+<!-- <div>
+  <div class="wine-slider">
+    <% counter = 0 %>
+    <% (@wines * 4).each do |wine| %>
+      <div class="winecard">
+        <div class="cardheader">
+          <div class="rating">
+            <p>
+              <i class="fa fa-star"></i>
+              <% if wine.rating %>
+                <%= wine.rating %>
+              <% else %>
+                N/A
+              <% end %>
+            </p>
+          </div>
+          <div class="price">
+            <p>$ <%= wine.price %></p>
+          </div>
+        </div>
+        <div class="imgbox">
+         <img src="<%= wine.photo_url %>" alt="Bottle of <%= wine.name %>">
+        </div>
+        <% if wine.name.length > 35 %>
+          <h3><%= wine.name[0..32] %>...</h3>
+        <% else %>
+          <h3><%= wine.name %></h3>
+        <% end %>
+        <p class="availability-text"><strong><%= @wine_availability[counter] %></strong>
+        <% if @wine_availability[counter] > 1 %>
+        bottles
+        <% else %>
+        bottle
+        <% end %>
+        available at<br>
+        <%= @store.banner %> <%= @store.name %>
+        </p>
+        <%= link_to "More details", show_path(wine), class: "main-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+
 
 <% content_for(:after_js) do %>
 

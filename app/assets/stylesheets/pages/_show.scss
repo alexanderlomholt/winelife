@@ -156,6 +156,14 @@ ol {
   margin-top: 17px;
 }
 
+
+#address {
+  text-align: center;
+  >*{
+    margin: 5px 0;
+  }
+}
+
 @media only screen and (max-width: 399px) {
   .product-image {
     width: 150px;
