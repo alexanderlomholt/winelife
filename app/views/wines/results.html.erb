@@ -5,6 +5,9 @@
       <h4><%= @store.banner %> <%= @store.name %></h4>
       <p><%= @store.address %></p>
       <p><i class="fa fa-phone"></i> <%= @store.phone_number %></p>
+      <a href ="#" class="scroll scroll-to-map">
+        <p><i class="fa fa-map-marker"></i> Get directions</p>
+      </a>
     </div>
     <div class="row no-h-margin">
       <% counter = 0 %>
@@ -50,14 +53,35 @@
       <% end %>
 
     </div>
-    <h1 class="list text-center">Directions</h1>
+    <h1 id="map-title" class="list text-center">Directions</h1>
     <div id="map"></div>
+    <a href ="#" class="scroll scroll-to-top">
+      <p><i class="fa fa-arrow-up"></i> Go up</p>
+    </a>
   </div>
 </div>
 
 <% content_for(:after_js) do %>
 
  <script>
+
+  // $(window).scroll(function(){
+  //   if ($(this).scrollTop() > 400) {
+  //     $('.scroll-to-top').fadeIn();
+  //   } else {
+  //     $('.scroll-to-top').fadeOut();
+  //   }
+  // });
+  //Click event to scroll to top
+  $('.scroll-to-top').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
+
+  $('.scroll-to-map').click(function(){
+    $('html, body').animate({scrollTop : $("#map-title").offset().top},800);
+    return false;
+  });
 
   document.addEventListener("DOMContentLoaded", function() {
 

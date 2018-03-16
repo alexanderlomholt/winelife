@@ -45,6 +45,15 @@ h1 {
   }
 }
 
+.scroll {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #F6546A;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
 @media only screen and (max-width: 599px) {
   // .wrapper-results {
   //   margin-bottom: 30px;
