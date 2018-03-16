@@ -93,7 +93,7 @@ class WinesController < ApplicationController
         puts "Wine is unavailable"
       end
       p elapsed_time = Time.now - starting_time
-      break if @wines.count == 6 || (@wines.count >= 2 && elapsed_time > 10.00) || (@wines.count >= 1 && elapsed_time > 15.00) || elapsed_time > 20.00
+      break if @wines.count == 6 || (@wines.count >= 2 && elapsed_time > 20.00) || (@wines.count >= 1 && elapsed_time > 30.00) || elapsed_time > 40.00
     end
 
     @marker =
