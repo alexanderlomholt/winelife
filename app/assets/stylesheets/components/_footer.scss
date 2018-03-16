@@ -1,0 +1,35 @@
+.footer {
+  font-size: 0.8em;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  padding: 0px 50px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  span {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .footer-content {
+    margin: 0 auto;
+  }
+  .footer a {
+    text-decoration: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    font-size: 0.5em;
+    span {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+}
+
+
