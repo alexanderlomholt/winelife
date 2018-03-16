@@ -22,6 +22,7 @@
 }
 
 .winelife {
+  margin-top: 18vh;
   color: white;
   text-decoration: none;
   padding: 0;
@@ -43,30 +44,39 @@
 .buttons {
   display: flex;
   justify-content: space-between;
-  margin: 25px 0;
-  padding: 20px;
+  margin: 20% 0 15px 0;
+  padding: 20px 0 6px 0;
 }
 
 .submit-btn-home {
     background-color: #F6546A;
     padding: 15px;
     border-radius: 4px;
-    width: 92%;
+    width: 50%;
     margin: 0px auto;
     border: none;
     color: white;
 }
 
-.sign-up-link a {
+.sign-up-link {
   color: white;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .wine-lover p {
   color: white;
   margin: 0;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .submit-btn-home {
+    width: 80%;
+  }
+  .winelife h3 {
+    font-size: 0.95em;
+  }
 }
