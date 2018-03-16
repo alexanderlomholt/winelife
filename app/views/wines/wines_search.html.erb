@@ -127,12 +127,18 @@
   submit_btn.addEventListener('click', function() {
     body.insertAdjacentHTML('afterbegin', `
       <div class="loader-container text-center">
-        <div>
+        <div id="loader-internal">
           <div class="loader"></div>
-          <h4>Searching the best rated wines at the nearest SAQ outlet</h4>
+          <h4>Searching the best rated wines at the nearest SAQ outlet...</h4>
         </div>
       </div>
-      `)
+      `);
+    setTimeout(function() {
+      const loaderInternal = document.getElementById("loader-internal");
+      loaderInternal.insertAdjacentHTML('beforeend', `
+        <h4>Please be patient and trust the SUPER MAGIC ALGORITHM!</h4>
+        `)
+    }, 10000);
   });
 </script>
 
