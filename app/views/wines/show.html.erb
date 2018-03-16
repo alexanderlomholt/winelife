@@ -36,7 +36,7 @@
     <% else %>
       <p class="details-wine text-justify ">Tasting note unavailable</p>
     <% end %>
-      <p class="more-infos text-center"> MORE INFOS </p>
+      <p class="more-infos text-center">MORE INFO</p>
       <div class="more-description display-none">
 
       <div class="row color-variety">
@@ -147,18 +147,29 @@
        //  $(".fa-heart").addClass( "is-clicked" );
      });
 
-    $( ".more-infos").click(function() {
+    // $( ".more-infos").click(function() {
 
-      $(".more-description").toggleClass( "display-none" );
+    //   $(".more-description").toggleClass( "display-none" );
 
 
 
-      if( $(".display-none").length )         // use this if you are using id to check
-        $(".more-infos").html( "MORE INFOS" );
-       else
+    //   if( $(".display-none").length )         // use this if you are using id to check
+    //     $(".more-infos").html( "MORE INFO" );
+    //    else
+    //     $("html, body").animate({ scrollTop: $(document).height()-$(window).height()}, 500);
+    //      $(".more-infos").html( "LESS INFO" );
+    //  });
+
+    document.querySelector(".more-infos").addEventListener("click", (event) => {
+      document.querySelector(".more-description").classList.toggle("display-none");
+
+      if (document.querySelector(".display-none")) {
+        document.querySelector(".more-infos").innerHTML = "MORE INFO";
+      } else {
+        document.querySelector(".more-infos").innerHTML = "LESS INFO";
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height()}, 500);
-         $(".more-infos").html( "LESS INFOS" );
-     });
+      }
+    })
    </script>
 
 <% end %>
