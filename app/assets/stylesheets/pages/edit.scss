@@ -6,16 +6,8 @@
 	// 	}
 	// }
 
-	.background-image-form {
-		background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('bottle_wine_form.jpg');
-		background-size: auto;
-		background-repeat: no-repeat;
-		background-size: cover;
-		min-height: 100vh;
-	}
-
-	.background-image-form-sign_up {
-		background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('landing-3.jpg');
+	.background-image-form-edit {
+		background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('landing-2.jpg');
 		background-size: auto;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -24,6 +16,7 @@
 
 	.main-content-login {
 		font-size: 1.6rem;
+		margin-top: 50px;
 		display: flex;
 		flex-direction: column;
 		height: calc(100vh - 70px);
@@ -32,17 +25,10 @@
 			padding: 6px;
 			font-family: Nunito;
 		}
-	}
 
-	.main-content-signup {
-		font-size: 1.6rem;
-		display: flex;
-		flex-direction: column;
-		height: calc(100vh - 70px);
-		justify-content: flex-end;
-		* {
-			padding: 6px;
-			font-family: Nunito;
+		h3 {
+			color: white;
+			font-size: 28px;
 		}
 	}
 
@@ -50,8 +36,8 @@
 		font-size: 8px;
 		color: white;
 	}
-	.page__section {
-		width: 90%;
+	.page__section-edit {
+		width: 95%;
 		margin: 0 auto;
 	}
 // .form-actions {
@@ -63,31 +49,7 @@
 // 	padding: 40px;
 // }
 
-.form-btn-wrapper {
-	position: absolute;
-	bottom: 10px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	p {
-		font-size: 16px;
-		color: white;
-		font-weight: normal;
-	}
-}
 
-.action-signup {
-	position: absolute;
-	bottom: 10px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	p {
-		font-size: 16px;
-		color: white;
-		font-weight: normal;
-	}
-}
 
 	// .btn {
 	// 	background-color: #F6546A;
@@ -120,19 +82,15 @@
 		cursor: pointer;			
 	}
 
-	.button-submit-form {
+	.button-submit-form-edit {
 		background-color: #F6546A;
-		padding: 12px;
+		padding: 4px;
 		border-radius: 4px;
-		width: 84%;
+		width: 82%;
 		border: none;
 		color: white;
 		margin: 0 auto;
 		text-align: center;
-	}
-
-	.alert.alert-warning.alert-dismissible{
-
 	}
 
 	.btn.btn-default {
@@ -161,34 +119,49 @@
 
 	}
 
+	#user_password_confirmation {
+		background-color: none;
+		border: none;
+		box-shadow: none;
+		border-bottom: 0.5px solid #CECECE;
+
+	}
+
+	#user_current_password {
+		background-color: none;
+		border: none;
+		box-shadow: none;
+		border-bottom: 0.5px solid #CECECE;
+	}
+
 /*
 * field
 */
 
 /* reset */
 
-.control-label .email .required {
-	width: 100%;
-	box-sizing: border-box;
-	background-color: var(--uiFieldBgColor);
-	font-family: Nunito;
-	font-size: 16px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 0;
-	border-style: solid;
-	border-color: var(--uiFieldBorderColor);
-	border-top-width: var(--uiFieldBorderTop);
-	border-right-width: var(--uiFieldBorderRight);
-	border-bottom-width: var(--uiFieldBorderBottom);
-	border-left-width: var(--uiFieldBorderLeft);
-	padding-top: var(--uiFieldPaddingTop);
-	padding-right: var(--uiFieldPaddingRight);
-	padding-bottom: var(--uiFieldPaddingBottom);
-	font-size: 100%;
-	color: inherit;
-}
+// .control-label .email .required {
+// 	width: 100%;
+// 	box-sizing: border-box;
+// 	background-color: var(--uiFieldBgColor);
+// 	font-family: Nunito;
+// 	font-size: 16px;
+// 	-webkit-appearance: none;
+// 	-moz-appearance: none;
+// 	appearance: none;
+// 	border-radius: 0;
+// 	border-style: solid;
+// 	border-color: var(--uiFieldBorderColor);
+// 	border-top-width: var(--uiFieldBorderTop);
+// 	border-right-width: var(--uiFieldBorderRight);
+// 	border-bottom-width: var(--uiFieldBorderBottom);
+// 	border-left-width: var(--uiFieldBorderLeft);
+// 	padding-top: var(--uiFieldPaddingTop);
+// 	padding-right: var(--uiFieldPaddingRight);
+// 	padding-bottom: var(--uiFieldPaddingBottom);
+// 	font-size: 100%;
+// 	color: inherit;
+// }
 
 .field{
 	--uiFieldPaddingTop: var(--fieldPaddingTop, 0px);
@@ -280,10 +253,10 @@
 	will-change: top, opacity;
 }
 
-// .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
-//   opacity: 0;
-//   top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
-// }
+.field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
+  opacity: 0;
+  top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
+}
 
 .field__input:focus ~ .field__label-wrap .field__label{
 	opacity: 1;
@@ -310,8 +283,8 @@
 	bottom: 0;
 	left: 0;
 
-	will-change: width;
-	transition: width var(--uiFieldAnimationDuration) ease-out;
+	// will-change: width;
+	// transition: width var(--uiFieldAnimationDuration) ease-out;
 }
 
 .field_type2 .field__input:focus ~ .field__label-wrap:after{
@@ -329,31 +302,7 @@
 	color: #fff;
 }
 
-/*
-* demo page
-*/
 
-// @media screen and (min-width: 768px){
-
-// 	html {
-// 		font-size: 62.5%;
-// 	}
-// }
-
-// @media screen and (max-width: 767px){
-
-// 	html {
-// 		font-size: 50%;
-// 	}
-// }
-
-// body {
-// 	font-size: 1.6rem;
-// 	color: #fff;
-// 	margin: 0;
-// 	-webkit-overflow-scrolling: touch;   
-// 	overflow-y: scroll;
-// 	background-color: #a18cd1;
 
 a{
 	text-decoration: none;
@@ -391,4 +340,19 @@ a:hover, a:focus{
 	}
 }
 
+.unhappy {
+	margin: 0 auto;
 
+	p {
+		color: white;
+		font-size: 16px;
+		text-decoration: none;
+		margin: 0;
+	}
+}
+
+.cancel_my_account {
+ a {
+	text-decoration: underline;
+}
+}

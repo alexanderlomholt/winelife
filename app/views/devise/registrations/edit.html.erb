@@ -1,27 +1,100 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+<body class="background-image-form-edit">
+  <div class="main-content-login">  
+    <form action="/users/sign_in" method="post">
+      <div class="form-inputs">
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+        <div class="page__section">
+          <h3>Edit your profile </h3>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-  </div>
+          <label class="field field_type2">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+            <input class="field__input" name="user[email]" placeholder="e.g. email@gmail.com">
+            <span class="field__label-wrap">
+              <span class="field__label">Enter your email</span>
+            </span>
+          </label>
 
-<h3>Cancel my account</h3>
+          <label class="field field_type2">
+            <input class="field__input" name="user[password]" type="password" placeholder="e.g. *******">
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <span class="field__label-wrap">
+              <span class="field__label">Enter your new password</span>
+            </span>
+          </label>
+          <label class="field field_type2">
+            <input class="field__input" type="password" name="user[password_confirmation]" placeholder="e.g. *******">
 
-<%= link_to "Back", :back %>
+            <span class="field__label-wrap">
+              <span class="field__label">Enter your new password</span>
+            </span>
+          </label>
+          <label class="field field_type2">
+            <input class="field__input" name="user[current_password]" type="password" placeholder="e.g. *******">
+
+            <span class="field__label-wrap">
+              <span class="field__label">Enter your current password</span>
+            </span>
+          </label>
+        </div>  
+
+      </div>  
+
+    <div class="button-submit-form-edit">
+      <input type="submit" name="" class="submit-btn-home-edit" >
+    </div>
+
+</form>
+
+<div class="unhappy">
+  
+<p class="text-center">Unhappy? </p>
+<p class="cancel_my_account text-center underline"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
+
+</div>
+
+</body>
+<!-- 
+      <div class="form-group email required user_email">
+
+        <label class="control-label email required field field_type2" for="user_email"></label>
+          <input class="form-control string email required field__input" autofocus="autofocus" required="required" aria-required="true" type="email" value="" name="" id="user_email" placeholder="email@mail.com">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter your email</span>
+          </span>
+        </div>
+
+
+        <div class="form-group password optional user_password">
+
+          <label class="control-label password optional field field_type2" for="user_password"></label>
+          <input class="form-control password optional field__input" type="password" name="user[password]" id="user_password" placeholder="Leave it blank if you don't want to change it">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter your new password</span>
+          </span>
+        </div>
+
+        <div class="form-group password optional user_password_confirmation">
+
+          <label class="control-label password optional field field_type2" for="user_password_confirmation"></label>
+          <input class="form-control password optional field__input" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter your new password</span>
+          </span>
+
+        </div>
+
+        <div class="form-group password required user_current_password">
+
+          <label class="control-label password required field field_type2" for="user_current_password"> </label>
+            <input class="form-control password required field__input" required="required" aria-required="true" type="password" name="" id="user_current_password" placeholder="we need your current password to confirm your changes">
+            <span class="field__label-wrap">
+              <span class="field__label">Enter your current password</span>
+            </span>
+
+          </div>
+        </div>
+      </div> -->
+
