@@ -1,7 +1,7 @@
 
 
 <body class="background-image-form-edit">
-  <div class="main-content-login">  
+  <div class="main-content-login">
     <form action="/users/sign_in" method="post">
       <div class="form-inputs">
 
@@ -37,18 +37,18 @@
               <span class="field__label">Enter your current password</span>
             </span>
           </label>
-        </div>  
+        </div>
 
-      </div>  
+      </div>
 
     <div class="button-submit-form-edit">
-      <input type="submit" name="" class="submit-btn-home-edit" >
+      <input type="submit" name="" class="submit-btn-home-edit" value="save changes">
     </div>
 
 </form>
 
 <div class="unhappy">
-  
+
 <p class="text-center">Unhappy? </p>
 <p class="cancel_my_account text-center underline"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
@@ -56,7 +56,7 @@
 </div>
 
 </body>
-<!-- 
+<!--
       <div class="form-group email required user_email">
 
         <label class="control-label email required field field_type2" for="user_email"></label>
