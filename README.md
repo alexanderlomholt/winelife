@@ -1,5 +1,14 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails web app mvp - currently working for the greater Montreal area. Find a bottle of wine (matching your preferences) that is available at your nearest SAQ store.
 
-Based on Jean-Hugues Roy's project - https://github.com/jhroy/saq-lcbo
+Technologies used:
+- Ruby on Rails / erb
+- SCSS (responsive)
+- HTML
+- Javascript & jQuery
+- Postgresql database
+- Active Record
+- Web scraping
+- Geocoding
+- Heroku
 
-Test push by Martin ;)
+Inspired by Jean-Hugues Roy's project - https://github.com/jhroy/saq-lcbo
